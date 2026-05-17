@@ -1,194 +1,251 @@
 
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/hooks/use-auth';
-import HeroSection from '@/components/landing/HeroSection';
-import FeaturesSection from '@/components/landing/FeaturesSection';
-import MarketplaceShowcase from '@/components/landing/MarketplaceShowcase';
-import TrainingResourcesSection from '@/components/landing/TrainingResourcesSection';
-import TestimonialsSection from '@/components/landing/TestimonialsSection';
-import FAQSection from '@/components/landing/FAQSection';
-import CTASection from '@/components/landing/CTASection';
-import FooterSection from '@/components/landing/FooterSection';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
+import { TrendingUp, Shield, ShoppingCart, ArrowRight, Egg, AlertTriangle, BarChart3, CheckCircle2, Star } from 'lucide-react';
+import { getNationalAverage } from '@/services/neccPriceService';
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  
-  // If user is already logged in, redirect to dashboard
-  useEffect(() => {
-    if (user) {
-      console.log("User is already authenticated, redirecting to dashboard");
-      navigate('/dashboard');
-    }
-  }, [user, navigate]);
-  
-  // Track scroll position to change header styling
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const national = getNationalAverage();
 
-  // Navigation links
-  const navigationLinks = [
-    { name: "Features", href: "#features" },
-    { name: "Marketplace", href: "#marketplace" },
-    { name: "Training", href: "#training" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "/contact" }
+  const features = [
+    {
+      icon: <TrendingUp className="h-7 w-7" />,
+      title: "NECC Price Transparency",
+      description: "Get real-time NECC zonal prices for eggs and broilers. Know the fair rate before you sell — never get underpaid again.",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50",
+    },
+    {
+      icon: <ShoppingCart className="h-7 w-7" />,
+      title: "Direct Marketplace",
+      description: "Sell directly to buyers with NECC-anchored pricing. Fair price indicators show if your rate is competitive.",
+      color: "from-emerald-500 to-green-500",
+      bgColor: "bg-emerald-50",
+    },
+    {
+      icon: <AlertTriangle className="h-7 w-7" />,
+      title: "Disease Alerts",
+      description: "Instant HPAI and Newcastle outbreak alerts within your area. 5-step biosecurity checklist to protect your flock.",
+      color: "from-red-500 to-orange-500",
+      bgColor: "bg-red-50",
+    },
   ];
-  
-  // Smooth scrolling for anchor links
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        setMobileMenuOpen(false);
-      }
-    } else {
-      navigate(href);
-    }
-  };
+
+  const testimonials = [
+    {
+      name: "Rajesh Kumar",
+      role: "Broiler Farmer, Anantapur",
+      text: "Before 22POULTRY, I was selling broilers at ₹95/kg to the middleman. Now I check the NECC rate daily and sell at ₹115/kg directly. That's ₹40,000 extra per cycle.",
+      stars: 5,
+    },
+    {
+      name: "Lakshmi Devi",
+      role: "Layer Farmer, Krishna",
+      text: "The disease alert saved my entire flock. When HPAI was reported 30km from my farm, I got the notification and followed the biosecurity steps immediately.",
+      stars: 5,
+    },
+    {
+      name: "Mohammed Irfan",
+      role: "Buyer, Hyderabad",
+      text: "As a restaurant owner, I needed consistent quality poultry. 22POULTRY connects me directly with verified farmers — no middleman, fair prices for both sides.",
+      stars: 5,
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header/Navbar */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/c9a1b8a4-493d-4cb1-a1ea-8d2f8d5735a1.png" 
-                alt="22POULTRY" 
-                className="h-10 w-10 mr-2" 
-              />
-              <span className={`text-2xl font-bold bg-gradient-to-r from-[#ea384c] to-[#0FA0CE] bg-clip-text text-transparent ${isScrolled ? 'drop-shadow-none' : 'drop-shadow-sm'}`}>
-                22POULTRY
-              </span>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              {navigationLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className={`text-sm font-medium hover:text-[#ea384c] transition-colors ${
-                    isScrolled ? 'text-gray-700' : 'text-white'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
-            
-            {/* Authentication Buttons */}
-            <div className="hidden md:flex items-center space-x-4">
-              <Button 
-                onClick={() => navigate('/auth')}
-                variant="ghost"
-                className={`${isScrolled ? 'text-[#ea384c] hover:bg-red-50 hover:text-[#d02f3d]' : 'text-white hover:bg-white/20'}`}
-              >
-                Sign In
-              </Button>
-              <Button 
-                onClick={() => navigate('/auth', { state: { initialMode: 'signup' } })}
-                className="bg-[#ea384c] text-white hover:bg-[#d02f3d]"
-              >
-                Sign Up Free
-              </Button>
-            </div>
-            
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <button 
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className={`p-2 rounded-md ${isScrolled ? 'text-gray-700' : 'text-white'}`}
-              >
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
+      {/* Navbar */}
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <img src="/lovable-uploads/c9a1b8a4-493d-4cb1-a1ea-8d2f8d5735a1.png" alt="22POULTRY" className="h-8 w-8" />
+            <span className="text-xl font-bold">
+              <span className="text-[#ea384c]">22</span><span className="text-[#0d3b66]">POULTRY</span>
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Button variant="ghost" size="sm" onClick={() => navigate('/auth')} className="text-gray-600">
+              Sign In
+            </Button>
+            <Button size="sm" onClick={() => navigate('/auth')} className="bg-[#ea384c] hover:bg-[#d63447] text-white">
+              Get Started Free
+            </Button>
           </div>
         </div>
-        
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
-            <div className="container mx-auto px-4 py-4 space-y-3">
-              {navigationLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="block py-2 text-gray-700 hover:text-[#ea384c] font-medium"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <div className="pt-4 border-t border-gray-100 grid grid-cols-2 gap-3">
-                <Button 
-                  onClick={() => navigate('/auth')}
-                  variant="outline"
-                  className="w-full"
-                >
-                  Sign In
-                </Button>
-                <Button 
-                  onClick={() => navigate('/auth', { state: { initialMode: 'signup' } })}
-                  className="w-full bg-[#ea384c] text-white hover:bg-[#d02f3d]"
-                >
-                  Sign Up
-                </Button>
-              </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-24 pb-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
+              <Egg className="h-4 w-4" />
+              Built for Indian Poultry Farmers
             </div>
+
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              Get NECC prices.{' '}
+              <span className="bg-gradient-to-r from-[#ea384c] to-[#0FA0CE] bg-clip-text text-transparent">
+                Sell direct.
+              </span>
+              <br />No middleman.
+            </h1>
+
+            <p className="text-lg text-gray-500 mb-8 max-w-xl mx-auto">
+              Stop losing 45-55% of your revenue to middlemen. Check today's NECC rate, list your produce at fair prices, and sell directly to buyers.
+            </p>
+
+            {/* Live NECC Price Preview */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="inline-flex items-center gap-6 px-6 py-3 rounded-xl bg-gradient-to-r from-[#1a1f35] to-[#0d3b66] text-white mb-8"
+            >
+              <div className="text-left">
+                <p className="text-[10px] uppercase tracking-wider text-white/50">Today's Egg Rate</p>
+                <p className="text-xl font-bold">₹{national.eggPrice.toFixed(2)}<span className="text-xs text-white/50">/pc</span></p>
+              </div>
+              <div className="w-px h-10 bg-white/20" />
+              <div className="text-left">
+                <p className="text-[10px] uppercase tracking-wider text-white/50">Today's Broiler Rate</p>
+                <p className="text-xl font-bold">₹{national.broilerPrice}<span className="text-xs text-white/50">/kg</span></p>
+              </div>
+              <div className="w-px h-10 bg-white/20" />
+              <p className="text-[10px] text-emerald-400">NECC National Average</p>
+            </motion.div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Button
+                size="lg"
+                onClick={() => navigate('/auth')}
+                className="bg-[#ea384c] hover:bg-[#d63447] text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-red-200"
+              >
+                Start Selling — Free
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Button>
+              <p className="text-xs text-gray-400">No fees. No subscriptions. Just fair prices.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Why farmers choose 22POULTRY</h2>
+            <p className="text-gray-500">Built to solve the 4 biggest problems small-scale farmers face</p>
           </div>
-        )}
-      </header>
-      
-      {/* Main Content */}
-      <main>
-        {/* Hero Section */}
-        <HeroSection />
-        
-        {/* Features Section */}
-        <FeaturesSection />
-        
-        {/* Marketplace Showcase */}
-        <MarketplaceShowcase />
-        
-        {/* Training Resources */}
-        <TrainingResourcesSection />
-        
-        {/* Testimonials */}
-        <TestimonialsSection />
-        
-        {/* FAQ Section */}
-        <FAQSection />
-        
-        {/* Call to Action */}
-        <CTASection />
-      </main>
-      
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {features.map((feature, i) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
+              >
+                <Card className="h-full border-0 shadow-sm hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${feature.color} text-white mb-4`}>
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="py-12 px-4 bg-gradient-to-r from-[#1a1f35] to-[#0d3b66] text-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { value: '15+', label: 'NECC Zones Tracked' },
+            { value: '₹2.6T', label: 'Indian Poultry Market' },
+            { value: '6M+', label: 'Poultry Farmers in India' },
+            { value: '45-55%', label: 'Revenue Lost to Middlemen' },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <p className="text-3xl font-bold">{stat.value}</p>
+              <p className="text-sm text-white/60 mt-1">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Trusted by farmers across India</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + i * 0.1 }}
+              >
+                <Card className="h-full border-0 shadow-sm">
+                  <CardContent className="p-6">
+                    <div className="flex gap-0.5 mb-3">
+                      {Array.from({ length: t.stars }).map((_, j) => (
+                        <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">"{t.text}"</p>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-900">{t.name}</p>
+                      <p className="text-xs text-gray-400">{t.role}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 px-4 bg-gradient-to-r from-[#ea384c] to-[#d63447] text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Stop losing money to middlemen</h2>
+          <p className="text-white/80 mb-8">Join thousands of farmers who check NECC prices and sell at fair rates every day.</p>
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() => navigate('/auth')}
+            className="bg-white text-[#ea384c] hover:bg-gray-100 border-0 px-8 py-6 text-lg rounded-xl"
+          >
+            Create Free Account
+            <ArrowRight className="h-5 w-5 ml-2" />
+          </Button>
+        </div>
+      </section>
+
       {/* Footer */}
-      <FooterSection />
+      <footer className="py-8 px-4 bg-gray-900 text-gray-400 text-center text-sm">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <img src="/lovable-uploads/c9a1b8a4-493d-4cb1-a1ea-8d2f8d5735a1.png" alt="22POULTRY" className="h-6 w-6" />
+          <span className="text-white font-semibold">22POULTRY</span>
+        </div>
+        <p>© 2026 22POULTRY. Empowering poultry stakeholders across India.</p>
+      </footer>
     </div>
   );
 };

@@ -2,20 +2,18 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
-  BarChart3, 
-  Database, 
-  BookOpen, 
-  Newspaper, 
-  Users, 
+  LayoutDashboard, 
   ShoppingCart, 
-  Home,
+  TrendingUp, 
+  User,
   X,
-  Phone,
   ChevronLeft,
+  Globe,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSidebar } from '@/contexts/SidebarContext';
+import { useI18n, SUPPORTED_LANGUAGES } from '@/i18n/i18n';
 
 interface NavItem {
   name: string;
@@ -31,16 +29,13 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ open, setSidebarOpen }) => {
   const location = useLocation();
   const isMobile = useIsMobile();
+  const { language, setLanguage, t } = useI18n();
 
   const navigation: NavItem[] = [
-    { name: 'Home', icon: <Home className="h-5 w-5" />, href: '/' },
-    { name: 'Statistics', icon: <BarChart3 className="h-5 w-5" />, href: '/statistics' },
-    { name: 'Financial Assistance', icon: <Database className="h-5 w-5" />, href: '/financial' },
-    { name: 'Training & Education', icon: <BookOpen className="h-5 w-5" />, href: '/training' },
-    { name: 'News & Weather', icon: <Newspaper className="h-5 w-5" />, href: '/news' },
-    { name: 'Networking', icon: <Users className="h-5 w-5" />, href: '/network' },
-    { name: 'Marketplace', icon: <ShoppingCart className="h-5 w-5" />, href: '/marketplace' },
-    { name: 'Contact Us', icon: <Phone className="h-5 w-5" />, href: '/contact' },
+    { name: t('nav.dashboard'), icon: <LayoutDashboard className="h-5 w-5" />, href: '/dashboard' },
+    { name: t('nav.marketplace'), icon: <ShoppingCart className="h-5 w-5" />, href: '/marketplace' },
+    { name: t('nav.neccAnalytics'), icon: <TrendingUp className="h-5 w-5" />, href: '/necc-analytics' },
+    { name: t('nav.profile'), icon: <User className="h-5 w-5" />, href: '/profile' },
   ];
 
   const handleNavigate = () => {
@@ -51,8 +46,9 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setSidebarOpen }) => {
 
   return (
     <div className={`h-screen w-64 bg-white border-r border-gray-200 flex flex-col ${isMobile ? 'shadow-xl' : ''}`}>
+      {/* Logo */}
       <div className="h-16 flex items-center justify-between px-4 border-b border-gray-200">
-        <div className="flex items-center">
+        <Link to="/dashboard" className="flex items-center">
           <img 
             src="/lovable-uploads/c9a1b8a4-493d-4cb1-a1ea-8d2f8d5735a1.png" 
             alt="22POULTRY" 
@@ -61,7 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setSidebarOpen }) => {
           <h1 className="text-xl font-bold bg-gradient-to-r from-[#ea384c] to-[#0FA0CE] bg-clip-text text-transparent">
             22POULTRY
           </h1>
-        </div>
+        </Link>
         
         <Button 
           variant="ghost" 
@@ -74,13 +70,14 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setSidebarOpen }) => {
         </Button>
       </div>
 
-      <nav className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 pt-5 px-3">
+      {/* Navigation */}
+      <nav className="flex-1 overflow-y-auto pt-5 px-3">
         {navigation.map((item) => {
           const isActive = location.pathname === item.href;
 
           return (
             <Link
-              key={item.name}
+              key={item.href}
               to={item.href}
               onClick={handleNavigate}
               className={`flex items-center gap-3 px-4 py-2.5 rounded-md transition-all duration-200 mb-1 ${
@@ -96,10 +93,27 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setSidebarOpen }) => {
         })}
       </nav>
 
-      <div className="px-3 py-4 border-t border-gray-200">
-        <div className="text-center text-xs text-gray-500">
-          <p>© 2025 22POULTRY</p>
-          <p className="mt-1">Empowering poultry farmers</p>
+      {/* Language Selector + Footer */}
+      <div className="px-3 py-4 border-t border-gray-200 space-y-3">
+        {/* Quick language toggle */}
+        <div className="flex items-center gap-1 justify-center">
+          {SUPPORTED_LANGUAGES.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => setLanguage(lang.code)}
+              className={`px-2.5 py-1 rounded text-xs font-medium transition-all ${
+                language === lang.code
+                  ? 'bg-blue-100 text-blue-700'
+                  : 'text-gray-400 hover:text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              {lang.nativeName}
+            </button>
+          ))}
+        </div>
+        <div className="text-center text-xs text-gray-400">
+          <p>© 2026 22POULTRY</p>
+          <p className="mt-0.5">Empowering poultry farmers</p>
         </div>
       </div>
     </div>

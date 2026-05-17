@@ -10,23 +10,16 @@ import { SearchProvider } from "@/contexts/SearchContext";
 import { I18nProvider } from "@/i18n/i18n";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 
+// MVP Pages Only
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import ContactUs from "./pages/ContactUs";
-import Statistics from "./pages/Statistics";
-import Financial from "./pages/Financial";
-import Training from "./pages/Training";
-import News from "./pages/News";
-import Network from "./pages/Network";
-import Marketplace from "./pages/Marketplace";
-import Profile from "./pages/Profile";
 import Auth from "./pages/Auth";
 import Onboarding from "./pages/Onboarding";
 import LandingPage from "./pages/LandingPage";
-import AdminDashboard from "./pages/AdminDashboard";
+import Marketplace from "./pages/Marketplace";
 import NECCAnalytics from "./pages/NECCAnalytics";
+import Profile from "./pages/Profile";
 
-// Create a new QueryClient instance
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -40,100 +33,28 @@ const App = () => (
               <Toaster />
               <Sonner />
               <Routes>
+                {/* Public */}
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/auth" element={<Auth />} />
-                <Route 
-                  path="/onboarding" 
-                  element={
-                    <ProtectedRoute>
-                      <Onboarding />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/dashboard" 
-                  element={
-                    <ProtectedRoute>
-                      <Index />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/statistics" 
-                  element={
-                    <ProtectedRoute>
-                      <Statistics />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/financial" 
-                  element={
-                    <ProtectedRoute>
-                      <Financial />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/training" 
-                  element={
-                    <ProtectedRoute>
-                      <Training />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/news" 
-                  element={
-                    <ProtectedRoute>
-                      <News />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/network" 
-                  element={
-                    <ProtectedRoute>
-                      <Network />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/marketplace" 
-                  element={
-                    <ProtectedRoute>
-                      <Marketplace />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/contact" 
-                  element={<ContactUs />}
-                />
-                <Route 
-                  path="/profile" 
-                  element={
-                    <ProtectedRoute>
-                      <Profile />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/admin" 
-                  element={
-                    <ProtectedRoute>
-                      <AdminDashboard />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/necc-analytics" 
-                  element={
-                    <ProtectedRoute>
-                      <NECCAnalytics />
-                    </ProtectedRoute>
-                  } 
-                />
+
+                {/* Protected — MVP Core */}
+                <Route path="/onboarding" element={
+                  <ProtectedRoute><Onboarding /></ProtectedRoute>
+                } />
+                <Route path="/dashboard" element={
+                  <ProtectedRoute><Index /></ProtectedRoute>
+                } />
+                <Route path="/marketplace" element={
+                  <ProtectedRoute><Marketplace /></ProtectedRoute>
+                } />
+                <Route path="/necc-analytics" element={
+                  <ProtectedRoute><NECCAnalytics /></ProtectedRoute>
+                } />
+                <Route path="/profile" element={
+                  <ProtectedRoute><Profile /></ProtectedRoute>
+                } />
+
+                {/* Catch-all */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </TooltipProvider>
