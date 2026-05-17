@@ -1,0 +1,132 @@
+{
+  "common": {
+    "appName": "22POULTRY",
+    "welcome": "22POULTRY మీకు స్వాగతం",
+    "loading": "లోడ్ అవుతోంది...",
+    "save": "సేవ్ చేయండి",
+    "cancel": "రద్దు",
+    "next": "తదుపరి",
+    "back": "వెనుకకు",
+    "submit": "సమర్పించండి",
+    "search": "శోధన",
+    "filter": "ఫిల్టర్",
+    "viewAll": "అన్నీ చూడండి",
+    "viewMore": "మరింత చూడండి",
+    "close": "మూసివేయండి",
+    "yes": "అవును",
+    "no": "కాదు",
+    "logout": "సైన్ అవుట్",
+    "login": "సైన్ ఇన్",
+    "signup": "సైన్ అప్",
+    "language": "భాష"
+  },
+  "nav": {
+    "dashboard": "డాష్‌బోర్డ్",
+    "marketplace": "మార్కెట్‌ప్లేస్",
+    "training": "శిక్షణ",
+    "financial": "ఆర్థిక సేవలు",
+    "network": "నెట్‌వర్క్",
+    "news": "వార్తలు",
+    "statistics": "గణాంకాలు",
+    "profile": "ప్రొఫైల్",
+    "contact": "మమ్మల్ని సంప్రదించండి",
+    "neccAnalytics": "NECC విశ్లేషణలు"
+  },
+  "dashboard": {
+    "subtitle": "భారత పౌల్ట్రీ పరిశ్రమ కోసం మీ సమగ్ర డిజిటల్ ప్లాట్‌ఫారం",
+    "neccPriceToday": "ఈ రోజు NECC ధర",
+    "nationalAverage": "జాతీయ సగటు",
+    "eggPrice": "గుడ్డు ధర",
+    "broilerPrice": "బ్రాయిలర్ ధర",
+    "feedPriceIndex": "ఫీడ్ ధర సూచిక",
+    "nationalProduction": "జాతీయ ఉత్పత్తి",
+    "marketOverview": "జాతీయ మార్కెట్ అవలోకనం",
+    "viewStatistics": "వివరమైన గణాంకాలు చూడండి",
+    "marketAnalysis": "మార్కెట్ విశ్లేషణ",
+    "productionData": "ఉత్పత్తి డేటా",
+    "forecasts": "అంచనాలు & నివేదికలు",
+    "vsYesterday": "నిన్నటితో పోలిస్తే",
+    "updated": "నవీకరించబడింది"
+  },
+  "marketplace": {
+    "title": "మార్కెట్‌ప్లేస్",
+    "createListing": "జాబితా సృష్టించండి",
+    "sellProduct": "మీ ఉత్పత్తిని అమ్మండి",
+    "productTitle": "ఉత్పత్తి పేరు",
+    "category": "వర్గం",
+    "price": "ధర",
+    "quantity": "పరిమాణం",
+    "location": "స్థానం",
+    "description": "వివరణ",
+    "neccRate": "NECC రేటు",
+    "fairPrice": "న్యాయమైన ధర సూచిక",
+    "atOrAboveNecc": "NECC రేటు వద్ద లేదా అంతకంటే ఎక్కువ",
+    "slightlyBelowNecc": "NECC రేటు కంటే కొద్దిగా తక్కువ",
+    "significantlyBelowNecc": "NECC రేటు కంటే చాలా తక్కువ",
+    "categories": {
+      "birds": "సజీవ పక్షులు",
+      "eggs": "గుడ్లు",
+      "feed": "ఫీడ్ & పోషణ",
+      "equipment": "పరికరాలు & సరఫరాలు",
+      "medicine": "మందులు & టీకాలు",
+      "services": "సేవలు"
+    }
+  },
+  "alerts": {
+    "diseaseAlert": "వ్యాధి హెచ్చరిక",
+    "biosecurityChecklist": "జీవ భద్రత చర్య జాబితా",
+    "fileInsuranceClaim": "బీమా క్లెయిమ్ దాఖలు చేయండి",
+    "callHelpline": "DAHD హెల్ప్‌లైన్‌కు కాల్ చేయండి",
+    "outbreakReported": "లో వ్యాప్తి నివేదించబడింది",
+    "radiusAffected": "వ్యాసార్థం ప్రభావితమైంది",
+    "birdsAffected": "పక్షులు ప్రభావితమయ్యాయి",
+    "doImmediately": "వెంటనే చేయండి",
+    "complete": "పూర్తయింది"
+  },
+  "training": {
+    "title": "శిక్షణ కేంద్రం",
+    "courses": "కోర్సులు",
+    "videos": "వీడియోలు",
+    "events": "ఈవెంట్లు",
+    "certificate": "సర్టిఫికేట్",
+    "tracks": {
+      "brooding": "బ్రూడింగ్ సెటప్",
+      "vaccination": "టీకా షెడ్యూల్",
+      "feedManagement": "ఫీడ్ నిర్వహణ",
+      "biosecurity": "జీవ భద్రత SOP",
+      "diseaseId": "వ్యాధి గుర్తింపు",
+      "pricingSales": "ధర & అమ్మకాలు"
+    }
+  },
+  "financial": {
+    "title": "ఆర్థిక సేవలు",
+    "transactions": "లావాదేవీలు",
+    "loans": "రుణాలు",
+    "insurance": "బీమా",
+    "kccLoan": "KCC రుణ దరఖాస్తు",
+    "bulkFeed": "బల్క్ ఫీడ్ కొనుగోలు"
+  },
+  "onboarding": {
+    "basicInfo": "ప్రాథమిక సమాచారం",
+    "yourRole": "మీ పాత్ర",
+    "location": "స్థానం & వివరాలు",
+    "farmProfile": "ఫారం ప్రొఫైల్",
+    "contactPrefs": "సంప్రదింపు & ప్రాధాన్యతలు",
+    "interests": "ఆసక్తులు",
+    "completeSetup": "సెటప్ పూర్తి చేయండి",
+    "flockType": "మంద రకం",
+    "birdCount": "పక్షుల సంఖ్య",
+    "farmLocation": "ఫారం స్థానం",
+    "shedPhoto": "షెడ్ ఫోటో",
+    "broiler": "బ్రాయిలర్",
+    "layer": "లేయర్",
+    "dualPurpose": "ద్వంద్వ ప్రయోజనం"
+  },
+  "auth": {
+    "enterMobile": "మీ మొబైల్ నంబర్ నమోదు చేయండి",
+    "enterOTP": "OTP నమోదు చేయండి",
+    "resendOTP": "OTP మళ్లీ పంపండి",
+    "mobileNumber": "మొబైల్ నంబర్",
+    "verifyIdentity": "గుర్తింపు ధృవీకరించండి"
+  }
+}

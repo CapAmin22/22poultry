@@ -1,0 +1,132 @@
+{
+  "common": {
+    "appName": "22POULTRY",
+    "welcome": "22POULTRY में आपका स्वागत है",
+    "loading": "लोड हो रहा है...",
+    "save": "सेव करें",
+    "cancel": "रद्द करें",
+    "next": "अगला",
+    "back": "पीछे",
+    "submit": "जमा करें",
+    "search": "खोजें",
+    "filter": "फ़िल्टर",
+    "viewAll": "सभी देखें",
+    "viewMore": "और देखें",
+    "close": "बंद करें",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "logout": "साइन आउट",
+    "login": "साइन इन",
+    "signup": "साइन अप",
+    "language": "भाषा"
+  },
+  "nav": {
+    "dashboard": "डैशबोर्ड",
+    "marketplace": "मार्केटप्लेस",
+    "training": "प्रशिक्षण",
+    "financial": "वित्तीय सेवाएं",
+    "network": "नेटवर्क",
+    "news": "समाचार",
+    "statistics": "आंकड़े",
+    "profile": "प्रोफ़ाइल",
+    "contact": "संपर्क करें",
+    "neccAnalytics": "NECC विश्लेषण"
+  },
+  "dashboard": {
+    "subtitle": "भारतीय पोल्ट्री उद्योग के लिए आपका एकीकृत डिजिटल प्लेटफ़ॉर्म",
+    "neccPriceToday": "आज की NECC कीमत",
+    "nationalAverage": "राष्ट्रीय औसत",
+    "eggPrice": "अंडे की कीमत",
+    "broilerPrice": "ब्रॉयलर कीमत",
+    "feedPriceIndex": "फ़ीड मूल्य सूचकांक",
+    "nationalProduction": "राष्ट्रीय उत्पादन",
+    "marketOverview": "राष्ट्रीय बाजार अवलोकन",
+    "viewStatistics": "विस्तृत आंकड़े देखें",
+    "marketAnalysis": "बाजार विश्लेषण",
+    "productionData": "उत्पादन डेटा",
+    "forecasts": "पूर्वानुमान और रिपोर्ट",
+    "vsYesterday": "कल की तुलना में",
+    "updated": "अपडेट किया गया"
+  },
+  "marketplace": {
+    "title": "मार्केटप्लेस",
+    "createListing": "लिस्टिंग बनाएं",
+    "sellProduct": "अपना उत्पाद बेचें",
+    "productTitle": "उत्पाद का नाम",
+    "category": "श्रेणी",
+    "price": "कीमत",
+    "quantity": "मात्रा",
+    "location": "स्थान",
+    "description": "विवरण",
+    "neccRate": "NECC दर",
+    "fairPrice": "उचित मूल्य संकेतक",
+    "atOrAboveNecc": "NECC दर पर या उससे अधिक",
+    "slightlyBelowNecc": "NECC दर से थोड़ा कम",
+    "significantlyBelowNecc": "NECC दर से काफ़ी कम",
+    "categories": {
+      "birds": "जीवित पक्षी",
+      "eggs": "अंडे",
+      "feed": "फ़ीड और पोषण",
+      "equipment": "उपकरण और आपूर्ति",
+      "medicine": "दवाएं और टीके",
+      "services": "सेवाएं"
+    }
+  },
+  "alerts": {
+    "diseaseAlert": "रोग चेतावनी",
+    "biosecurityChecklist": "जैव सुरक्षा कार्य सूची",
+    "fileInsuranceClaim": "बीमा दावा दर्ज करें",
+    "callHelpline": "DAHD हेल्पलाइन पर कॉल करें",
+    "outbreakReported": "में प्रकोप की सूचना",
+    "radiusAffected": "त्रिज्या प्रभावित",
+    "birdsAffected": "पक्षी प्रभावित",
+    "doImmediately": "तुरंत करें",
+    "complete": "पूर्ण"
+  },
+  "training": {
+    "title": "प्रशिक्षण केंद्र",
+    "courses": "पाठ्यक्रम",
+    "videos": "वीडियो",
+    "events": "कार्यक्रम",
+    "certificate": "प्रमाणपत्र",
+    "tracks": {
+      "brooding": "ब्रूडिंग सेटअप",
+      "vaccination": "टीकाकरण अनुसूची",
+      "feedManagement": "फ़ीड प्रबंधन",
+      "biosecurity": "जैव सुरक्षा SOP",
+      "diseaseId": "रोग पहचान",
+      "pricingSales": "मूल्य निर्धारण और बिक्री"
+    }
+  },
+  "financial": {
+    "title": "वित्तीय सेवाएं",
+    "transactions": "लेनदेन",
+    "loans": "ऋण",
+    "insurance": "बीमा",
+    "kccLoan": "KCC ऋण आवेदन",
+    "bulkFeed": "थोक फ़ीड खरीदारी"
+  },
+  "onboarding": {
+    "basicInfo": "बुनियादी जानकारी",
+    "yourRole": "आपकी भूमिका",
+    "location": "स्थान और विवरण",
+    "farmProfile": "फ़ार्म प्रोफ़ाइल",
+    "contactPrefs": "संपर्क और प्राथमिकताएं",
+    "interests": "रुचियाँ",
+    "completeSetup": "सेटअप पूरा करें",
+    "flockType": "झुंड का प्रकार",
+    "birdCount": "पक्षियों की संख्या",
+    "farmLocation": "फ़ार्म स्थान",
+    "shedPhoto": "शेड फ़ोटो",
+    "broiler": "ब्रॉयलर",
+    "layer": "लेयर",
+    "dualPurpose": "दोहरा उद्देश्य"
+  },
+  "auth": {
+    "enterMobile": "अपना मोबाइल नंबर दर्ज करें",
+    "enterOTP": "OTP दर्ज करें",
+    "resendOTP": "OTP दोबारा भेजें",
+    "mobileNumber": "मोबाइल नंबर",
+    "verifyIdentity": "पहचान सत्यापित करें"
+  }
+}

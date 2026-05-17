@@ -9,10 +9,13 @@ import { Egg, BarChart3, Database, TrendingUp, PieChart, AlertCircle, ChevronRig
 import PriceChart from '@/components/dashboard/PriceChart';
 import FeedRatioChart from '@/components/dashboard/FeedRatioChart';
 import ProductionStats from '@/components/dashboard/ProductionStats';
+import NECCPriceCard from '@/components/dashboard/NECCPriceCard';
+import DiseaseAlertBanner from '@/components/alerts/DiseaseAlertBanner';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { useNavigate } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { getNationalAverage } from '@/services/neccPriceService';
 
 // Sample news data
 const newsHighlights = [{
@@ -70,6 +73,8 @@ const weatherAlerts = [{
 }];
 const Index: React.FC = () => {
   const navigate = useNavigate();
+  const national = getNationalAverage();
+  
   return <Layout>
       <motion.div initial={{
       opacity: 0
@@ -78,7 +83,10 @@ const Index: React.FC = () => {
     }} transition={{
       duration: 0.5
     }} className="w-full">
-        <div className="space-y-8">
+        <div className="space-y-6">
+          {/* Disease Alert Banner — conditionally shown */}
+          <DiseaseAlertBanner userState="Andhra Pradesh" />
+          
           {/* Welcome Banner */}
           <motion.div initial={{
           opacity: 0,
@@ -97,7 +105,7 @@ const Index: React.FC = () => {
                 </p>
                 <div className="flex items-center space-x-2 text-sm font-medium text-white/80">
                   <TrendingUp className="h-4 w-4" />
-                  <span>National market insights updated today at 11:30 AM</span>
+                  <span>NECC prices updated today at {new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}</span>
                 </div>
                 
               </div>
@@ -109,27 +117,35 @@ const Index: React.FC = () => {
             <div className="absolute top-10 right-32 w-6 h-6 rounded-full bg-white/20"></div>
           </motion.div>
           
-          {/* Key Stats Section */}
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-gray-800">National Market Overview</h2>
-              <Button variant="outline" size="sm" onClick={() => navigate('/statistics')}>
-                View Detailed Statistics
-              </Button>
+          {/* NECC Price Card + Key Stats */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {/* NECC Price Card — Main widget */}
+            <div className="lg:col-span-1">
+              <NECCPriceCard onViewAnalytics={() => navigate('/necc-analytics')} />
             </div>
-            <motion.div initial={{
-            opacity: 0
-          }} animate={{
-            opacity: 1
-          }} transition={{
-            delay: 0.2,
-            duration: 0.5
-          }} className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <StatHighlight title="National Egg Price" value="₹5.20" unit="/piece" change={3.5} icon={<Egg className="h-5 w-5 text-[#f5565c]" />} />
-              <StatHighlight title="National Broiler Price" value="₹112" unit="/kg" change={-1.8} icon={<BarChart3 className="h-5 w-5 text-[#f5565c]" />} />
-              <StatHighlight title="Feed Price Index" value="124.5" unit="" change={5.2} icon={<Database className="h-5 w-5 text-[#f5565c]" />} />
-              <StatHighlight title="National Production" value="98.3M" unit="eggs/day" change={2.1} icon={<PieChart className="h-5 w-5 text-[#f5565c]" />} />
-            </motion.div>
+            
+            {/* Key Stats */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-lg font-semibold text-gray-800">National Market Overview</h2>
+                <Button variant="outline" size="sm" onClick={() => navigate('/statistics')}>
+                  View Detailed Statistics
+                </Button>
+              </div>
+              <motion.div initial={{
+              opacity: 0
+            }} animate={{
+              opacity: 1
+            }} transition={{
+              delay: 0.2,
+              duration: 0.5
+            }} className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <StatHighlight title="National Egg Price" value={`₹${national.eggPrice.toFixed(2)}`} unit="/piece" change={+(national.eggDelta / national.eggPrice * 100).toFixed(1)} icon={<Egg className="h-5 w-5 text-[#f5565c]" />} />
+                <StatHighlight title="National Broiler Price" value={`₹${national.broilerPrice}`} unit="/kg" change={+(national.broilerDelta / national.broilerPrice * 100).toFixed(1)} icon={<BarChart3 className="h-5 w-5 text-[#f5565c]" />} />
+                <StatHighlight title="Feed Price Index" value="124.5" unit="" change={5.2} icon={<Database className="h-5 w-5 text-[#f5565c]" />} />
+                <StatHighlight title="National Production" value="98.3M" unit="eggs/day" change={2.1} icon={<PieChart className="h-5 w-5 text-[#f5565c]" />} />
+              </motion.div>
+            </div>
           </div>
           
           {/* Dashboard Tabs */}

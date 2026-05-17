@@ -11,6 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/use-auth';
 import { v4 as uuidv4 } from 'uuid';
+import NECCPriceAnchor from './NECCPriceAnchor';
 
 interface FarmerSellFormProps {
   onListingCreated: (newListing: any) => void;
@@ -237,6 +238,15 @@ const FarmerSellForm: React.FC<FarmerSellFormProps> = ({ onListingCreated }) => 
           />
         </div>
       </div>
+      
+      {/* NECC Price Anchor — shows when category is birds or eggs and price is entered */}
+      {(formData.category === 'birds' || formData.category === 'eggs') && (
+        <NECCPriceAnchor
+          askingPrice={formData.price ? parseFloat(formData.price) : undefined}
+          commodity={formData.category === 'eggs' ? 'egg' : 'broiler'}
+          className="mt-2"
+        />
+      )}
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1">

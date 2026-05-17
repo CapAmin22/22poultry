@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/hooks/use-auth";
 import { SidebarProvider } from "@/contexts/SidebarContext";
 import { SearchProvider } from "@/contexts/SearchContext";
+import { I18nProvider } from "@/i18n/i18n";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 
 import Index from "./pages/Index";
@@ -23,11 +24,13 @@ import Auth from "./pages/Auth";
 import Onboarding from "./pages/Onboarding";
 import LandingPage from "./pages/LandingPage";
 import AdminDashboard from "./pages/AdminDashboard";
+import NECCAnalytics from "./pages/NECCAnalytics";
 
 // Create a new QueryClient instance
 const queryClient = new QueryClient();
 
 const App = () => (
+  <I18nProvider>
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
       <BrowserRouter>
@@ -123,6 +126,14 @@ const App = () => (
                     </ProtectedRoute>
                   } 
                 />
+                <Route 
+                  path="/necc-analytics" 
+                  element={
+                    <ProtectedRoute>
+                      <NECCAnalytics />
+                    </ProtectedRoute>
+                  } 
+                />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </TooltipProvider>
@@ -131,6 +142,7 @@ const App = () => (
       </BrowserRouter>
     </AuthProvider>
   </QueryClientProvider>
+  </I18nProvider>
 );
 
 export default App;

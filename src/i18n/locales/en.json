@@ -1,0 +1,132 @@
+{
+  "common": {
+    "appName": "22POULTRY",
+    "welcome": "Welcome to 22POULTRY",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "next": "Next",
+    "back": "Back",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "viewAll": "View All",
+    "viewMore": "View More",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "logout": "Sign Out",
+    "login": "Sign In",
+    "signup": "Sign Up",
+    "language": "Language"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "marketplace": "Marketplace",
+    "training": "Training",
+    "financial": "Financial Services",
+    "network": "Network",
+    "news": "News",
+    "statistics": "Statistics",
+    "profile": "Profile",
+    "contact": "Contact Us",
+    "neccAnalytics": "NECC Analytics"
+  },
+  "dashboard": {
+    "subtitle": "Your integrated digital platform for the Indian poultry industry",
+    "neccPriceToday": "NECC Price Today",
+    "nationalAverage": "National Average",
+    "eggPrice": "Egg Price",
+    "broilerPrice": "Broiler Price",
+    "feedPriceIndex": "Feed Price Index",
+    "nationalProduction": "National Production",
+    "marketOverview": "National Market Overview",
+    "viewStatistics": "View Detailed Statistics",
+    "marketAnalysis": "Market Analysis",
+    "productionData": "Production Data",
+    "forecasts": "Forecasts & Reports",
+    "vsYesterday": "vs yesterday",
+    "updated": "Updated"
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "createListing": "Create Listing",
+    "sellProduct": "Sell Your Product",
+    "productTitle": "Product Title",
+    "category": "Category",
+    "price": "Price",
+    "quantity": "Quantity",
+    "location": "Location",
+    "description": "Description",
+    "neccRate": "NECC Rate",
+    "fairPrice": "Fair Price Indicator",
+    "atOrAboveNecc": "At or above NECC rate",
+    "slightlyBelowNecc": "Slightly below NECC rate",
+    "significantlyBelowNecc": "Significantly below NECC rate",
+    "categories": {
+      "birds": "Live Birds",
+      "eggs": "Eggs",
+      "feed": "Feed & Nutrition",
+      "equipment": "Equipment & Supplies",
+      "medicine": "Medicines & Vaccines",
+      "services": "Services"
+    }
+  },
+  "alerts": {
+    "diseaseAlert": "Disease Alert",
+    "biosecurityChecklist": "Biosecurity Action Checklist",
+    "fileInsuranceClaim": "File Insurance Claim",
+    "callHelpline": "Call DAHD Helpline",
+    "outbreakReported": "outbreak reported in",
+    "radiusAffected": "radius affected",
+    "birdsAffected": "birds affected",
+    "doImmediately": "Do this immediately",
+    "complete": "complete"
+  },
+  "training": {
+    "title": "Training Center",
+    "courses": "Courses",
+    "videos": "Videos",
+    "events": "Events",
+    "certificate": "Certificate",
+    "tracks": {
+      "brooding": "Brooding Setup",
+      "vaccination": "Vaccination Schedule",
+      "feedManagement": "Feed Management",
+      "biosecurity": "Biosecurity SOP",
+      "diseaseId": "Disease Identification",
+      "pricingSales": "Pricing & Sales"
+    }
+  },
+  "financial": {
+    "title": "Financial Services",
+    "transactions": "Transactions",
+    "loans": "Loans",
+    "insurance": "Insurance",
+    "kccLoan": "KCC Loan Application",
+    "bulkFeed": "Bulk Feed Buying"
+  },
+  "onboarding": {
+    "basicInfo": "Basic Information",
+    "yourRole": "Your Role",
+    "location": "Location & Details",
+    "farmProfile": "Farm Profile",
+    "contactPrefs": "Contact & Preferences",
+    "interests": "Interests",
+    "completeSetup": "Complete Setup",
+    "flockType": "Flock Type",
+    "birdCount": "Number of Birds",
+    "farmLocation": "Farm Location",
+    "shedPhoto": "Shed Photo",
+    "broiler": "Broiler",
+    "layer": "Layer",
+    "dualPurpose": "Dual Purpose"
+  },
+  "auth": {
+    "enterMobile": "Enter your mobile number",
+    "enterOTP": "Enter OTP",
+    "resendOTP": "Resend OTP",
+    "mobileNumber": "Mobile Number",
+    "verifyIdentity": "Verify Identity"
+  }
+}
