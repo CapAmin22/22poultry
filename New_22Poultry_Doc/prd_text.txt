@@ -1,0 +1,767 @@
+22POULTRY 
+Product Requirements Document 
+Problem Definition & Opportunity Analysis 
+Phase 1: Market Research & User Discovery 
+Status: Research Complete | Draft V1.0 
+Document Date: May 11, 2026 
+ 
+
+Executive Summary 
+This document presents comprehensive market research and problem validation for 
+22POULTRY, a platform designed to transform India's small-scale poultry industry. 
+Based on 2024-2026 market data and validated farmer economics, we have 
+identified a critical market gap: small-scale poultry farmers (managing 1,000-10,000 
+birds) lose 45-55% of their potential revenue to middlemen while institutional buyers 
+(QSRs, restaurants, hotels) struggle to source consistent, traceable, quality poultry 
+from fragmented small farms. 
+Key Findings: 
+•​
+Market Size: India's poultry market valued at ₹2.6 trillion (2025), growing at 
+13.8% CAGR to ₹8.4 trillion by 2034 
+•​
+Target User Base: 6 million+ people employed in poultry farming, with 70% 
+being small-scale farmers 
+•​
+Core Problem Validated: Farmers receive only 45-55% of mandi price when 
+selling through traditional middlemen 
+•​
+Buyer Demand Confirmed: Food service market growing from $51B (2024) to 
+$124B (2033) at 10.3% CAGR, with QSRs desperate for consistent B2B 
+poultry sourcing 
+•​
+Competitive Landscape: C2C agritech marketplaces have failed (funding 
+dropped 95% from 2021 to 2024), but B2B institutional supply remains 
+underserved 
+This document deliberately excludes solution exploration to maintain focus on 
+problem validation and opportunity sizing. Solution design will follow in Phase 2 after 
+stakeholder alignment on problem definition. 
+ 
+
+Document Purpose & Scope 
+Purpose 
+This PRD serves as the foundational research document for 22POULTRY's product 
+development. It establishes: 
+•​
+Problem definition with quantitative evidence 
+•​
+Market opportunity sizing and growth projections 
+•​
+Target user personas and their Jobs-to-be-Done (JTBD) 
+•​
+Competitive landscape and market gaps 
+•​
+User stories and acceptance criteria for validation 
+What This Document IS NOT 
+This document deliberately excludes: 
+•​
+Solution design or feature specifications 
+•​
+Technical architecture or implementation details 
+•​
+UI/UX mockups or wireframes 
+•​
+Go-to-market strategy or pricing models 
+These elements will be addressed in subsequent phases after stakeholder alignment 
+on the problem definition. 
+Research Methodology 
+Data sources and validation: 
+•​
+Market reports from IMARC, Expert Market Research, Mordor Intelligence 
+(2024-2026) 
+•​
+Government data: Department of Animal Husbandry & Dairying, NABARD 
+schemes 
+•​
+Competitive intelligence: Funding data from Venture Intelligence, Inc42 
+reports 
+
+•​
+Academic research: Agricultural economics papers on middleman margins 
+•​
+Industry reports: QSR procurement patterns, food service market analysis 
+ 
+
+Problem Statement 
+Core Problem Definition 
+Small-scale poultry farmers in India (managing 1,000-10,000 birds) face 
+structural isolation that results in 25-40% lower income compared to their 
+potential. This isolation manifests in four critical dimensions: 
+1. Market Access Isolation 
+Problem: Farmers lack direct access to institutional buyers and must sell through 
+middlemen who extract 45-55% of the final selling price. 
+Evidence: 
+•​
+Research from agricultural economics studies shows farmers receive only 
+45-55% of mandi price on average, with the margin between mandi price and 
+farmer price larger in rural districts (65%) than in peri-urban areas (47%) 
+•​
+Traditional middlemen provide essential services (credit, market knowledge, 
+logistics) that farmers cannot access independently, creating dependency 
+•​
+For a farmer selling 2,000 broiler birds at ₹200/bird wholesale price (₹4 lakh 
+gross), the middleman margin reduces farmer revenue to ₹1.8-2.2 lakh — a 
+loss of ₹1.8-2.2 lakh per cycle 
+2. Information Asymmetry 
+Problem: Farmers lack real-time market price transparency, quality standards 
+knowledge, and awareness of institutional buyer requirements. 
+Evidence: 
+•​
+Tracked prices by farmers are significantly closer to the prices they receive 
+(₹2.15/kg) than to actual mandi prices (₹4.77/kg), indicating limited awareness 
+of true market rates 
+•​
+Mandi price variation is extreme year-over-year, with 87% of variation 
+unexplained by seasonal or market-specific factors, making it impossible for 
+farmers to forecast prices accurately 
+
+•​
+QSRs and institutional buyers require traceability, food safety certifications, 
+and consistent sizing/quality — standards that small farmers don't know how 
+to meet 
+3. Capital Access Barriers 
+Problem: Small farmers lack access to affordable working capital for inputs (feed, 
+chicks, medicine) and must rely on high-interest informal credit or supplier advances 
+that lock them into unfavorable supply relationships. 
+Evidence: 
+•​
+Feed costs account for 70% of total poultry farming expenses, creating 
+massive working capital needs 
+•​
+Formal loans for poultry farming (₹5-9 lakh typical farm setup) carry interest 
+rates ranging from 7% (NABARD subsidized) to 26% per annum depending 
+on lender, but many farmers cannot access formal credit 
+•​
+When farmers take crop advances from commission agents or traders, they 
+become obligated to sell to the same middleman at pre-agreed prices, 
+reducing bargaining power 
+4. Network & Knowledge Isolation 
+Problem: Farmers lack peer networks for best practice sharing, quality training on 
+disease management, and access to technical expertise that could improve yields 
+and reduce mortality. 
+Evidence: 
+•​
+Contract farming models in Tamil Nadu and Maharashtra provide training and 
+technical support to farmers, demonstrating that knowledge transfer improves 
+productivity 
+•​
+Government extension services exist but are under-resourced, with large 
+integrators providing superior training to their contract farmers 
+
+•​
+Mortality rates and disease outbreaks (avian influenza, Newcastle disease) 
+disproportionately affect small farmers who lack biosecurity knowledge and 
+vaccination protocols 
+ 
+
+Why Existing Solutions Have Failed 
+The agritech marketplace model collapse (2021-2024) provides critical insights into 
+what NOT to build: 
+C2C Marketplace Failure 
+Data: Agritech marketplaces raised $490 million in 2021 but saw funding collapse to 
+just $26 million in 2024 (95% decline). Major players like WayCool struggled with 
+massive losses despite high valuations. 
+Why they failed: 
+•​
+Farmers remain skeptical of digital platforms, preferring traditional middlemen 
+who understand local agricultural cycles and provide crucial credit support 
+•​
+High operational costs from cold chain, logistics, and farmer acquisition made 
+unit economics unsustainable 
+•​
+Consumer demand for direct farm-to-table purchasing was overestimated; 
+traditional retail remains dominant (45% market share in 2025) 
+•​
+Platforms tried to eliminate middlemen entirely without providing equivalent 
+value (credit, local knowledge, relationship-based trust) 
+What IS Working: Contract Farming Model 
+Data: Contract poultry farming is an emerging trend particularly in Tamil Nadu and 
+Maharashtra, supported by government subsidies. The National Livestock Mission 
+provides up to 50% of project cost (max ₹25 lakh) for farm establishment. This model 
+empowers small farmers through input support, assured B2B retention, and training. 
+Why it works: 
+•​
+Guaranteed buyer (integrator) provides certainty that farmers value over spot 
+market volatility 
+•​
+Upfront input support (feed, chicks, technical advice) solves the working 
+capital problem 
+
+•​
+Training and quality standards from integrators improve farmer yields and 
+reduce mortality 
+•​
+Relationship-based model aligns with farmer preferences for trusted partners 
+over anonymous digital platforms 
+ 
+
+Problem Impact: Quantified Farmer Economics 
+To validate problem severity, we calculated the financial impact on a typical 
+small-scale broiler farmer: 
+Metric 
+Current (via 
+Middleman) 
+Potential (Direct 
+B2B) 
+Farmer Gain 
+Farm size 
+2,000 birds per cycle 
+2,000 birds per cycle 
+— 
+Price per bird 
+₹200 (wholesale) 
+₹220-240 (direct) 
++₹20-40/bird 
+Gross revenue per 
+cycle 
+₹4.0 lakh 
+₹4.4-4.8 lakh 
++₹40K-80K 
+Farmer revenue 
+(after middleman cut) 
+₹1.8-2.2 lakh 
+(45-55%) 
+₹4.2-4.6 lakh 
+(95-98%) 
++₹2.0-2.8 lakh 
+Net profit per cycle 
+₹60-80K 
+₹75-105K 
++25-30% increase 
+Annual income (8 
+cycles/year) 
+₹4.8-6.4 lakh 
+₹6.0-8.4 lakh 
++₹1.2-2.0 lakh/year 
+Source: Broiler profit margins from agricultural economics research (₹25-40 per bird), middleman 
+margin data from field studies showing farmers receive 45-55% of mandi price. 
+Critical finding: A 25-30% income increase (₹1.2-2.0 lakh per year) is 
+transformative for a small-scale farmer household. This represents the difference 
+between subsistence farming and the ability to invest in farm expansion, children's 
+education, or improved living standards. 
+ 
+
+Market Opportunity 
+Market Size & Growth 
+Market Segment 
+2025 Value 
+2033-2035 Projection 
+India Poultry Market 
+₹2.6 trillion ($32.9B) 
+₹8.4 trillion ($71.8B) | 13.8% 
+CAGR 
+Food Service Market 
+$51.0B 
+$123.5B (2033) | 10.33% 
+CAGR 
+Poultry Feed Market 
+₹955B 
+₹1,291B (2033) | 3.23% 
+CAGR 
+Agritech Market (India) 
+$9B 
+$28B (2030) | 25% CAGR 
+Sources: IMARC Group, Expert Market Research, Mordor Intelligence, Inc42 Agritech Market 
+Landscape Report 2025 
+Supply-Side Opportunity 
+Target Farmer Segment 
+•​
+Total addressable market: 6+ million people employed in poultry farming in 
+India 
+•​
+Small-scale farmers: 70% of contract broiler farmers manage flocks of 
+3,000-10,000 birds, making this the dominant segment 
+•​
+Geographic concentration: Maharashtra, Tamil Nadu, Andhra Pradesh, 
+Telangana, West Bengal, Karnataka account for majority of production 
+•​
+Production scale: India produces 140+ billion eggs and 4.5 million tonnes of 
+broiler meat annually (2024) 
+ 
+
+Demand-Side Opportunity: B2B Institutional Buyers 
+•​
+QSR/restaurant sector: Intensive growth of organized food service restaurants 
+creating great incremental demand for poultry, with chicken as a widely used 
+staple ingredient 
+•​
+B2B procurement acceleration: Institutional buyers, QSRs, and cloud kitchens 
+signing agreements for hygienic, portioned, and traceable poultry products 
+•​
+Digital procurement: Startups like Captain Fresh digitizing procurement with 
+real-time inventory, pricing, and fulfillment solutions that appeal to enterprise 
+clients seeking predictability 
+•​
+Cold chain investment: Digitally integrated cold chain logistics allowing 
+real-time temperature monitoring, reducing spoilage, enhancing safety, and 
+boosting trust among institutional buyers 
+Market Gap: The Missing Link 
+Current situation: QSRs and institutional buyers source from large integrators 
+(Suguna, Venky's, IB Group) or scattered informal suppliers. Small-scale farmers 
+cannot compete because they lack aggregation, traceability systems, and logistics 
+coordination. 
+The opportunity: No platform exists to efficiently connect small-scale farmers 
+directly to institutional buyers with: 
+○​ Quality standardization and traceability 
+○​ Aggregated consistent supply from fragmented small farms 
+○​ Logistics coordination for 3x/week pickups 
+○​ Credit/input support that aligns farmer and buyer incentives 
+ 
+
+Target Users & Personas 
+Primary User Persona 1: Small-Scale Broiler Farmer 
+Attribute 
+Details 
+Name 
+Rajesh Kumar (representative persona) 
+Age 
+35-50 years old 
+Location 
+Rural/peri-urban Maharashtra, Tamil Nadu, Andhra Pradesh, or 
+Karnataka 
+Farm Size 
+2,000-5,000 broiler birds per 6-week cycle 
+Education 
+8th-12th grade; semi-literate; basic smartphone literacy 
+Tech Access 
+Smartphone (Android); WhatsApp user; 3G/4G connectivity 
+(intermittent) 
+Annual Income 
+₹4.8-6.4 lakh from poultry (current via middlemen) 
+Primary Language 
+Hindi, Marathi, Tamil, Telugu, or Kannada (regional variation) 
+Pain Points 
+•​
+"I have no choice but to sell to the local middleman. He gives me ₹180-200 
+per bird, but I know he sells for ₹350-400. I lose ₹1.5-2 lakh every cycle." 
+•​
+"Feed costs keep rising. I spend ₹2.8 lakh on feed alone per cycle but don't 
+know if I'm getting the best price or quality." 
+•​
+"I need credit to buy chicks and feed upfront, but the middleman gives me 
+advances at 18-24% interest. Then I'm stuck selling to him at whatever price 
+he decides." 
+•​
+"I lost 15% of my last batch to disease. No one taught me proper vaccination 
+schedules or biosecurity. The big integrators train their contract farmers but 
+I'm on my own." 
+
+•​
+"I hear hotels and restaurants need chicken but I have no way to reach them. I 
+don't have cold storage or a truck. How can I compete with the big 
+companies?" 
+Jobs to Be Done (JTBD) 
+•​
+Primary JTBD: Sell my birds at fair market price (70-80% of retail, not 
+45-55%) to a guaranteed buyer 
+•​
+Secondary JTBD: Access affordable working capital for inputs without 
+predatory interest or lock-in 
+•​
+Tertiary JTBD: Learn best practices to reduce mortality and improve yields 
+ 
+
+Primary User Persona 2: QSR/Restaurant Procurement Manager 
+Attribute 
+Details 
+Name 
+Priya Sharma (representative persona) 
+Role 
+Operations/Procurement Manager at multi-location QSR or cloud 
+kitchen chain 
+Restaurant Type 
+QSR chain (5-20 outlets), cloud kitchen, or mid-scale casual dining 
+(2-5 locations) 
+Location 
+Metro cities (Mumbai, Bangalore, Delhi, Hyderabad) 
+Monthly Poultry 
+Spend 
+₹1.5-3 lakh per outlet (₹30-40K per week) 
+Education 
+College degree; tech-savvy; comfortable with procurement software 
+Pain Points 
+•​
+"We source from 3-4 different local suppliers. Quality is inconsistent - 
+sometimes the chicken is undersized, sometimes delivery is late. We can't 
+serve customers if we run out." 
+•​
+"Food safety is critical. We need traceability - farm ID, vaccination records, 
+slaughter date. Most small suppliers can't provide this documentation." 
+•​
+"The big integrators (Suguna, Venky's) are reliable but expensive. They 
+charge premium prices because we're locked in. I wish there was a way to 
+source directly from farms at better rates." 
+•​
+"Coordinating with 10+ small suppliers is a nightmare. Different payment 
+terms, different delivery schedules, constant phone calls. I need one platform 
+that aggregates supply." 
+Jobs to Be Done (JTBD) 
+•​
+Primary JTBD: Get consistent, traceable, quality poultry at competitive 
+prices with 3x/week guaranteed delivery 
+
+•​
+Secondary JTBD: Reduce procurement complexity by consolidating multiple 
+suppliers into one reliable partner 
+•​
+Tertiary JTBD: Meet food safety compliance requirements with full traceability 
+documentation 
+ 
+
+User Stories & Acceptance Criteria 
+The following user stories define the core jobs-to-be-done without prescribing 
+specific solutions. Acceptance criteria establish measurable validation gates. 
+Epic 1: Farmer Market Access 
+User Story 1.1: Direct Buyer Access 
+As a small-scale broiler farmer managing 2,000-5,000 birds, 
+I want to sell my birds directly to institutional buyers (restaurants, hotels, 
+QSRs), 
+So that I can earn 70-80% of the retail price instead of 45-55% through 
+middlemen, increasing my profit by 25-30% per cycle. 
+Acceptance Criteria: 
+•​
+Given I have 2,000 birds ready for sale, When I connect with a buyer, Then I 
+receive a price quote that is at least 10% higher than my current middleman 
+rate 
+•​
+Given I complete a sale, When payment is processed, Then I receive funds 
+within 48 hours of delivery (vs. 7-15 days from middlemen) 
+•​
+Given I make a sale through direct buyer channel, When I calculate my net 
+income, Then I earn ₹15,000-25,000 more per cycle than selling via traditional 
+middleman 
+User Story 1.2: Price Transparency 
+As a small-scale poultry farmer with limited market knowledge, 
+I want to see real-time market prices for poultry in my region, 
+So that I can negotiate better prices and know whether I'm getting a fair deal. 
+Acceptance Criteria: 
+
+•​
+Given I open the platform, When I view market prices, Then I see current live 
+bird prices from at least 3 different mandi/market sources in my district 
+•​
+Given I receive a price offer, When I compare it to market rate, Then the offer 
+is within 5% of the published mandi price (preventing exploitation) 
+•​
+Given market prices fluctuate, When prices change by more than 10%, Then I 
+receive a notification via WhatsApp or SMS so I can time my sales better 
+User Story 1.3: Guaranteed Buyer Contracts 
+As a farmer who invests ₹2.8 lakh in feed and inputs upfront, 
+I want to have a guaranteed buyer committed to purchasing my birds before I 
+start a new batch, 
+So that I don't take on market risk and can plan my cash flow with certainty. 
+Acceptance Criteria: 
+•​
+Given I have a buyer interested in my supply, When I sign an agreement, 
+Then the buyer commits to purchasing a specific quantity (e.g., 1,500-2,000 
+birds) at a pre-agreed price floor 
+•​
+Given my birds are ready for sale, When I notify the buyer, Then pickup is 
+scheduled within 48 hours (no more than 3 days delay) 
+•​
+Given the buyer commits to purchase, When the pickup happens, Then the 
+buyer accepts at least 95% of my birds (rejections <5% due to quality issues) 
+ 
+
+Epic 2: QSR/Buyer Supply Reliability 
+User Story 2.1: Consistent Quality Supply 
+As a QSR operations manager needing 150 kg of chicken per week across 5 
+outlets, 
+I want to receive consistent, sized, fresh poultry from a reliable aggregated 
+source, 
+So that my menu quality remains consistent and I never run out of chicken 
+during service hours. 
+Acceptance Criteria: 
+•​
+Given I place a weekly order for 150 kg, When delivery arrives, Then 95%+ of 
+birds meet my weight specification (1.5-2.0 kg live weight) 
+•​
+Given I have scheduled 3x/week deliveries (Mon/Wed/Fri), When delivery day 
+comes, Then my order arrives within the 2-hour scheduled window at least 
+90% of the time 
+•​
+Given I receive a shipment, When I inspect quality, Then rejection rate is <5% 
+(spoilage, size issues, disease visible) 
+User Story 2.2: Food Safety & Traceability 
+As a restaurant owner subject to FSSAI inspections and food safety audits, 
+I want to have complete traceability records for all poultry I purchase (farm ID, 
+vaccination records, slaughter date), 
+So that I can comply with food safety regulations and protect my customers 
+from foodborne illness. 
+Acceptance Criteria: 
+•​
+Given I receive a poultry shipment, When I scan/access the batch ID, Then I 
+can see: farm location, farmer ID, bird age, vaccination dates, feed type, and 
+slaughter date 
+
+•​
+Given an FSSAI inspector requests documentation, When I provide 
+traceability records, Then all required fields are present and verifiable within 5 
+minutes 
+•​
+Given a food safety incident (customer complaint), When I need to trace the 
+source, Then I can identify the exact farm and batch within 15 minutes for 
+recall purposes 
+User Story 2.3: Cost Competitiveness 
+As a cloud kitchen operator managing tight margins (8-12% net profit), 
+I want to source poultry at 10-15% lower cost than large integrators, 
+So that I can maintain competitive menu pricing while improving my gross 
+margins. 
+Acceptance Criteria: 
+•​
+Given I receive price quotes from both platform and integrator 
+(Suguna/Venky's), When I compare rates, Then the platform price is 10-15% 
+lower for equivalent quality and service 
+•​
+Given I purchase 150 kg/week, When I switch from integrator to platform, 
+Then I save ₹3,000-5,000 per month in poultry procurement costs 
+•​
+Given I evaluate total cost of ownership (price + delivery fees + quality), When 
+I calculate net cost, Then the platform delivers at least 8% total cost savings 
+vs. status quo 
+ 
+
+Epic 3: Platform Trust & Reliability 
+User Story 3.1: Payment Reliability (Farmer Trust) 
+As a farmer who has been cheated by buyers in the past (delayed payments, 
+quality disputes), 
+I want to receive guaranteed payment within 48 hours of delivery, 
+So that I can pay my feed suppliers and workers on time without cash flow 
+stress. 
+Acceptance Criteria: 
+•​
+Given I deliver birds to a buyer, When quality inspection is complete, Then 
+payment is initiated automatically within 6 hours 
+•​
+Given payment is initiated, When I check my bank account, Then funds are 
+received within 48 hours for 95%+ of transactions 
+•​
+Given a quality dispute arises, When resolution is needed, Then I receive at 
+least 85% of the agreed payment even in worst-case scenarios (protection 
+against total loss) 
+User Story 3.2: Support in Local Language 
+As a farmer who speaks Marathi/Tamil/Telugu and has limited English 
+proficiency, 
+I want to access platform support and documentation in my native language, 
+So that I can understand contracts, get help when needed, and use the 
+platform confidently. 
+Acceptance Criteria: 
+•​
+Given I need customer support, When I contact the platform, Then I can 
+communicate via WhatsApp or phone in my regional language (Hindi, Marathi, 
+Tamil, Telugu, Kannada) 
+•​
+Given I have a question, When I reach out for help, Then I receive a response 
+from a local-language support agent within 4 hours during business hours 
+
+•​
+Given I need to understand terms and conditions, When I view contracts, 
+Then all critical documents are available in both English and my regional 
+language 
+ 
+
+Success Metrics & Validation Gates 
+These metrics will validate whether the problem is being solved effectively. Metrics 
+are defined before solution design to ensure we measure outcomes, not outputs. 
+Phase 1 Validation Metrics (Months 1-6) 
+Metric 
+Baseline 
+Target (Month 6) 
+Success Criteria 
+Farmer Income 
+Improvement 
+45-55% of mandi 
+price 
+70-80% of retail 
+price 
+25-30% net income 
+increase validated 
+through surveys 
+Farmer Net Promoter 
+Score 
+N/A (new 
+platform) 
+NPS >40 
+Farmers actively 
+recommend to peers 
+QSR Order Fulfillment 
+Rate 
+N/A 
+>90% on-time 
+delivery 
+Buyers trust platform as 
+reliable supplier 
+Monthly GMV (Gross 
+Merchandise Value) 
+₹0 
+₹5-10 crore 
+Proves market demand 
+and unit economics 
+Active Farmers 
+Onboarded 
+0 
+200-500 farmers 
+Supply aggregation 
+proof in 1 pilot metro 
+Active QSR/Restaurant 
+Buyers 
+0 
+50-100 buyers 
+Demand validation in 1 
+pilot metro 
+Buyer Repeat Order 
+Rate 
+N/A 
+>80% weekly 
+reorder 
+Proves product-market 
+fit and retention 
+Critical Assumptions to Validate 
+These assumptions underpin the problem definition. If any prove false, we must 
+revisit the strategy: 
+Supply-Side Assumptions (Farmer) 
+
+•​
+Assumption 1: Farmers will switch from traditional middlemen if offered 
+20-30% higher prices with guaranteed payment 
+○​ Validation method: Pilot with 20-30 farmers; measure switching rate and 
+satisfaction 
+○​ Invalidation signal: <50% of farmers approached agree to try platform 
+•​
+Assumption 2: Small-scale farmers can meet QSR quality and 
+consistency requirements with minimal training 
+○​ Validation method: Run quality audits on first 50 farmer deliveries; 
+measure rejection rate 
+○​ Invalidation signal: >20% rejection rate by QSRs due to quality/sizing 
+issues 
+•​
+Assumption 3: Farmers have basic smartphone literacy and can use 
+WhatsApp-based interfaces 
+○​ Validation method: User testing with 10-15 farmers from target segment 
+○​ Invalidation signal: >40% cannot complete basic tasks even with phone 
+support 
+Demand-Side Assumptions (QSR/Buyer) 
+•​
+Assumption 4: QSRs/restaurants will buy from small-farm aggregators if 
+traceability and consistency are guaranteed 
+○​ Validation method: Interview 15-20 QSR procurement managers; present 
+value prop and gauge interest 
+○​ Invalidation signal: <60% express willingness to trial the platform 
+•​
+Assumption 5: QSRs can save 10-15% on procurement costs vs. 
+integrators while maintaining quality 
+○​ Validation method: Compare platform pricing to integrator rates across 10+ 
+QSRs 
+
+○​ Invalidation signal: Net savings <5% after accounting for quality/logistics 
+issues 
+•​
+Assumption 6: Logistics coordination (3x/week pickups from 200+ farms 
+to 50+ restaurants) is operationally feasible 
+○​ Validation method: Pilot logistics in one metro for 2 months; measure 
+fulfillment rate and cost 
+○​ Invalidation signal: <85% on-time delivery or logistics cost >5% of GMV 
+ 
+
+Risks & Mitigation Strategies 
+Risk 
+Impact 
+Mitigation Strategy 
+Farmers prefer traditional middlemen 
+relationships despite better pricing 
+High - kills supply side 
+Validate in pilot: if <50% switch rate, 
+pivot to input supply or integrator 
+partnerships 
+Small farmers cannot meet QSR 
+quality standards consistently 
+High - kills demand side 
+Build quality training program; partner 
+with existing integrators for quality 
+protocols; accept only certified farmers 
+Integrators (Suguna, Venky's) 
+undercut pricing or lock farmers into 
+exclusive contracts 
+Medium - competitive 
+response 
+Focus on farmers not in integrator 
+contracts; differentiate on payment 
+speed + transparency; explore 
+partnership vs. competition 
+Logistics complexity makes 3x/week 
+delivery uneconomical 
+High - breaks unit 
+economics 
+Pilot logistics first; if cost >5% GMV, 
+shift to buyer-arranged logistics or 
+hub-and-spoke model 
+Regulatory barriers for direct 
+farm-to-restaurant sales (FSSAI 
+licensing) 
+Medium - solvable with 
+process 
+Validate regulations in pilot city; work 
+with FSSAI-approved slaughterhouses; 
+build compliance into onboarding 
+Disease outbreak (avian flu) disrupts 
+supply and demand simultaneously 
+High - industry-wide risk 
+Geographic diversification; maintain 
+relationships with integrators as 
+backup; insurance products for farmers 
+ 
+
+Next Steps & Decision Points 
+Immediate Action Items (Week 1) 
+•​
+Validate QSR demand: Conduct 5-10 phone interviews with restaurant 
+procurement managers in pilot metro (Mumbai or Bangalore) 
+○​ Goal: Confirm willingness to source from small-farm aggregator 
+○​ Success criteria: >60% express interest in trialing platform 
+•​
+Validate farmer supply: Visit 5-10 small-scale broiler farmers in 
+peri-urban areas 
+○​ Goal: Confirm switching willingness and validate economics (middleman 
+margins, current pricing) 
+○​ Success criteria: >50% willing to try if offered 20-30% higher price 
+•​
+Regulatory check: Consult with municipal food safety officer or FSSAI 
+representative 
+○​ Goal: Identify licensing requirements for direct farm-to-restaurant sales 
+○​ Red flag: If licensing cost >₹50K per farmer or takes >3 months, may need 
+integrator partnership model 
+•​
+Competitive intelligence: Map existing B2B poultry suppliers in pilot 
+metro 
+○​ Goal: Understand competitive pricing, quality standards, and market gaps 
+○​ Red flag: If integrators already offer direct small-farm sourcing at similar 
+economics, may need differentiation pivot 
+Decision Gates 
+Week 2 Gate: Demand Validation 
+•​
+Decision: Proceed to solution design if >60% of QSRs express interest 
+
+•​
+Pivot: If <60%, explore alternative buyer segments (hotels, caterers, 
+processed meat companies) 
+Week 2 Gate: Supply Validation 
+•​
+Decision: Proceed if >50% of farmers willing to switch at proposed pricing 
+•​
+Pivot: If <50%, consider input supply marketplace (feed procurement) or 
+integrator partnership model 
+Week 3 Gate: Regulatory Feasibility 
+•​
+Decision: Proceed if licensing process is <3 months and <₹50K per farmer 
+•​
+Pivot: If regulatory barriers too high, partner with FSSAI-approved 
+slaughterhouses or work through integrator licenses 
+Phase 2 Initiation Criteria 
+Proceed to solution design and MVP build ONLY if all three gates pass: 
+•​
+✓ Demand validated: >60% QSR interest confirmed 
+•​
+✓ Supply validated: >50% farmer switching willingness confirmed 
+•​
+✓ Regulatory path clear: Licensing feasible within acceptable time/cost 
+If ANY gate fails, revisit the problem definition and consider documented pivot 
+options before investing in solution development. 

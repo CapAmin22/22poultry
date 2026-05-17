@@ -1,0 +1,4128 @@
+22POULTRY  •  Product Management 
+User Stories & Acceptance Criteria 
+ 
+Phase 1 + Phase 2 Product Backlog 
+7 Epics  •  20 User Stories  •  5 Personas  •  8 NFRs  •  7 Open Questions 
+ 
+Document Version 
+1.0  (Final — Approved for Phase 1 Development) 
+Prepared By 
+Product Management — 22POULTRY 
+Date Issued 
+15 May 2026 
+Target Geography 
+Andhra Pradesh + Telangana (Phase 1 Pilot States) 
+Target Segment 
+Small-Scale Independent Poultry Farmers (1,000 – 10,000 birds) 
+Status 
+Approved for Sprint Planning 
+Document Owner 
+Founder & Head of Product 
+Review Cadence 
+Quarterly (Q1 reviews completed) 
+ 
+CONFIDENTIAL — INTERNAL USE ONLY 
+Distribution restricted to founders, product, engineering, design, and approved investors. 
+ 
+
+1. Document Overview 
+1.1 Purpose 
+This document is the authoritative product backlog for 22POULTRY's Phase 1 and Phase 2 build. It 
+defines what we will build, for whom, why, and how we know it is done — across 7 epics, 20 user 
+stories, 5 personas, and 8 non-functional requirements. 
+Every story in this document is grounded in the validated market research from the 22POULTRY 
+Investor Thesis (Section 2: Small-Scale Farmer Reality — Pain Points with Data) and is prioritized 
+using RICE scoring tuned for our specific phase constraints. 
+1.2 Audience 
+Engineering 
+Source of truth for sprint planning, acceptance test design, and definition of done. 
+Design 
+Foundation for user flows, interaction patterns, and content templates per persona. 
+Founders 
+Decision-ready prioritization framework; scope guardrails for Phase 1 vs. Phase 2. 
+Investors 
+Detailed evidence that the team has done deep PM work and is build-ready, not still 
+ideating. 
+Partners 
+Reference for integration scope (banks, insurers, NECC, DAHD, feed mills, vets). 
+1.3 Story Format 
+Every story follows the industry-standard Connextra format ("As a... I want... so that...") augmented 
+with research-backed context, Gherkin-style acceptance criteria, edge cases, dependencies, and 
+quantified success metrics. 
+1.4 Priority Definitions 
+Priority 
+Meaning 
+Decision Rule 
+P0 — MUST 
+HAVE 
+Core to PMF; we 
+cannot launch without 
+it 
+Failing this fails the Phase 1 hypothesis. No deferrals. 
+P1 — SHOULD 
+HAVE 
+Strong value; ships in 
+Phase 1 or early Phase 
+2 
+Defer only if blocked by a hard dependency; track as 
+risk if pushed. 
+P2 — NICE TO 
+HAVE 
+Adds polish; can wait to 
+Phase 2 or 3 
+Park in backlog. Revisit only after P0/P1 are stable. 
+
+1.5 RICE Scoring Methodology 
+RICE = (Reach × Impact × Confidence) / Effort. We score each story on: 
+•​ Reach: Number of farmers in Phase 1 who would touch this feature per quarter 
+•​ Impact: 1 (minimal) / 2 (medium) / 3 (massive) — qualitative outcome on farmer income or 
+retention 
+•​ Confidence: 50 / 60 / 75 / 85 / 90 / 95% based on research depth + dependency risk 
+•​ Effort: 1 (small, ≤ 1 sprint) / 2 (medium, 1–2 sprints) / 3 (large, > 2 sprints) 
+1.6 What This Document Does Not Cover 
+•​ Visual design specs, mockups, or component-level UI behavior (see Design system docs). 
+•​ Detailed engineering technical design or system architecture diagrams (see Architecture v1.0). 
+•​ Go-to-market plan, marketing copy, or onboarding campaign sequences (see GTM v1.0). 
+•​ Investor pitch narrative or fundraising deck (see Pitch Deck v3.0). 
+•​ Phase 3 nationwide scaling features beyond what is hinted at in roadmap projections. 
+ 
+
+2. User Personas 
+All 20 stories are anchored to one of these five personas. Each persona is grounded in field-validated 
+farmer/buyer/vet/banker interviews and the broader research base (FAO, ICRIER-PARI, Down to Earth 
+2025 Punjab study, Engormix farmer testimonies). 
+ 
+P-01 
+Ravi Kumar 
+Independent Broiler Farmer 
+ 
+"Last cycle, the trader paid me ₹85/kg. I saw the NECC rate that day was ₹104. ₹19 per kg 
+gone — for what?" 
+— Ravi Kumar, Independent Broiler Farmer 
+ 
+Demographics & Context 
+Age 
+38 years 
+Location 
+Karimnagar district, Telangana 
+Education 
+Class 10 dropout; literate in Telugu 
+Flock Size 
+5,000 broilers per cycle, 6 cycles/year 
+Annual Revenue 
+₹12–18 lakh gross 
+Phone 
+Redmi Note 12 (4G, ₹6,500) 
+Connectivity 
+Jio 4G, sometimes drops to 2G 
+Languages 
+Telugu (native), Hindi (broken), English (signs only) 
+ 
+Daily Behaviors 
+Pain Points 
+Goals & Aspirations 
+▸ Uses WhatsApp 4+ hours/day — 
+voice notes, family groups, poultry 
+trader contacts. 
+● Trader takes ₹15–20/kg below NECC 
+market rate — opaque, no negotiation 
+leverage. 
+★ Get ₹10–15/kg closer to NECC rate 
+per cycle (₹50,000–₹75,000 more per 
+cycle). 
+★ Access ₹1.6 lakh formal credit at 
+4–7% instead of moneylender at 36%. 
+
+Daily Behaviors 
+Pain Points 
+Goals & Aspirations 
+▸ Watches YouTube farming videos at 
+night (Telugu poultry channels with 
+50k–200k subscribers). 
+▸ Pays for feed via UPI (PhonePe 
+primary), receives bird payment via 
+cash + cheque. 
+▸ Calls 3–4 local traders before each 
+sale to negotiate; accepts the best of 
+bad offers. 
+▸ Has tried to enroll for KCC twice; gave 
+up after the bank asked for documents 
+he could not assemble. 
+● Feed prices spike unpredictably; no 
+advance warning, no bulk-buying 
+access. 
+● Last bird flu scare cost him ₹2.4 lakh 
+— no insurance, no compensation filed 
+in time. 
+● Cannot read English vaccination 
+schedules from the chick supplier. 
+● Borrows ₹1.5 lakh per cycle from 
+local moneylender at 36% annual 
+interest. 
+★ Reduce mortality from current 6% 
+to industry-benchmark 2–3%. 
+ 
+Product Impact 
+•​ Primary user of Marketplace listings, NECC price feed, KCC application, biosecurity alerts. Voice-first UI in Telugu 
+is non-negotiable. 
+ 
+
+P-02 
+Priya Devi 
+Layer Farm Manager (Family Operation) 
+ 
+"My husband handles the buying. I track the eggs, the feed, the medicines, the money. But 
+banks won't talk to me — they ask for him." 
+— Priya Devi, Layer Farm Manager (Family Operation) 
+ 
+Demographics & Context 
+Age 
+34 years 
+Location 
+West Godavari district, Andhra Pradesh 
+Education 
+B.A. (Telugu medium); functional English 
+Flock Size 
+3,000 layers, 72-week cycle 
+Annual Revenue 
+₹14–22 lakh gross 
+Phone 
+Samsung Galaxy M14 (4G, ₹11,000) 
+Connectivity 
+Jio 4G stable; village has fiber backhaul 
+Languages 
+Telugu (native), English (read/write), basic Hindi 
+ 
+Daily Behaviors 
+Pain Points 
+Goals & Aspirations 
+▸ Manages day-to-day farm operations: 
+feed schedule, vaccinations, egg 
+collection, accounts. 
+▸ Uses a spiral notebook to track daily 
+egg count, feed bag consumption, 
+mortality. 
+▸ Watches Instagram Reels and 
+YouTube poultry content in Telugu and 
+English. 
+▸ Pays for vet visits and feed via UPI 
+(Google Pay); shares ledger photos to 
+WhatsApp with husband. 
+● Bank refused her KCC application 
+because the farm is in her 
+father-in-law's name. 
+● Egg traders pay ₹0.30–₹0.50/egg 
+below NECC rate; she has no real-time 
+NECC visibility. 
+● Vaccination schedule from supplier is 
+in English — she translates manually 
+for the worker. 
+● No way to find verified buyers 
+outside the 2–3 local traders she has 
+used for years. 
+★ Get egg prices within ₹0.20/egg of 
+NECC rate via direct buyer access. 
+★ Build a credit history in her own 
+name to access financial products 
+independently. 
+★ Find peer women farmers running 
+similar operations for collective 
+bargaining. 
+
+Daily Behaviors 
+Pain Points 
+Goals & Aspirations 
+▸ Active in two local women's SHG 
+groups; trusted by peer farmers for 
+advice. 
+ 
+Product Impact 
+•​ Heavy user of NECC price feed, cycle profitability tracker, community feed, and women-led peer groups. Likely 
+to convert to paid training subscription. 
+ 
+
+P-03 
+Mohammed Ilyas 
+Poultry Processor / Wholesale Buyer 
+ 
+"I need 800 birds every Tuesday and Friday. I waste 4 hours a day on phone calls — every 
+farmer wants a different price, every truck is late." 
+— Mohammed Ilyas, Poultry Processor / Wholesale Buyer 
+ 
+Demographics & Context 
+Age 
+45 years 
+Location 
+Namakkal, Tamil Nadu (poultry capital cluster) 
+Education 
+Class 12; English working knowledge 
+Business Volume 
+500–1,000 birds/week (broiler procurement) 
+Annual Revenue 
+₹3.5–5 crore gross 
+Phone 
+iPhone 13 (4G + WiFi) 
+Connectivity 
+Airtel 4G + office WiFi 
+Languages 
+Tamil (native), English (fluent), Telugu (functional) 
+ 
+Daily Behaviors 
+Pain Points 
+Goals & Aspirations 
+▸ Maintains a roster of 30–40 farmer 
+contacts on WhatsApp Business. 
+▸ Calls farmers daily 5:00–7:00 AM to 
+confirm bird availability and price. 
+▸ Arranges trucks via a freight broker; 
+pays farmers in cash or NEFT same-day. 
+▸ Uses spreadsheets (Tamil + English 
+mixed) to track weekly procurement. 
+▸ Trusts farmers he has known 5+ 
+years; reluctant to onboard new sellers 
+without intro. 
+● Cannot verify a new farmer's flock 
+quality, biosecurity, or honesty without 
+a physical visit. 
+● Price negotiation eats hours; farmers 
+play him against other buyers. 
+● Logistics coordination is manual — 
+trucks arrive late, birds suffer in transit. 
+● No reliable supply pipeline when bird 
+flu hits a district he sources from. 
+★ Cut sourcing time from 4 hours/day 
+to 1 hour via digital listings and verified 
+seller ratings. 
+★ Build a backup supplier network 
+across 3–4 districts to hedge against 
+local disease outbreaks. 
+★ Get transparent price discovery so 
+he can quote his customers reliable 
+margins. 
+ 
+
+Product Impact 
+•​ Demand-side power user of Marketplace, ratings, verified seller filters. Buys frequently → high transaction 
+velocity drives commission revenue. 
+ 
+
+P-04 
+Dr. Anita Sharma 
+Veterinary Officer & Trainer 
+ 
+"I can visit 80 farms a month if I drive 10 hours a day. But there are 8,000 farms in this 
+district. The math doesn't work." 
+— Dr. Anita Sharma, Veterinary Officer & Trainer 
+ 
+Demographics & Context 
+Age 
+41 years 
+Location 
+Mandya district, Karnataka 
+Education 
+B.V.Sc & A.H. (Karnataka Veterinary University); 15 years field experience 
+Affiliation 
+State Animal Husbandry Department + ICAR-KVK part-time consultant 
+Coverage 
+~80 farms/month physical visits 
+Phone 
+Samsung Galaxy A54 (5G, ₹35,000) 
+Connectivity 
+Jio 5G in town, 4G in villages 
+Languages 
+Kannada (native), English (fluent), Hindi, Tamil (functional) 
+ 
+Daily Behaviors 
+Pain Points 
+Goals & Aspirations 
+▸ Travels 200–300 km/week visiting 
+farms across 6 talukas. 
+▸ Records farm visits in a paper 
+register; submits monthly reports to 
+department. 
+▸ Uses WhatsApp groups to share 
+disease alerts and vaccination 
+reminders. 
+▸ Reads English veterinary journals; 
+struggles to find Kannada poultry 
+content for farmers. 
+▸ Trusted advisor — farmers call her 
+directly before calling integrators. 
+● Cannot scale her reach beyond ~80 
+farms physically; thousands of farmers 
+underserved. 
+● No platform to publish vetted 
+poultry content in Kannada to a large 
+audience. 
+● Government compensation forms for 
+HPAI culling are paper-based; farmers 
+miss deadlines. 
+● No income stream beyond 
+government salary; would consult 
+part-time if there were a platform. 
+★ Scale her advisory reach from 80 to 
+8,000 farmers via digital training and 
+tele-consults. 
+★ Generate ₹15,000–₹30,000/month 
+supplementary income via paid expert 
+consults. 
+★ Build a public reputation as a top 
+poultry vet in Karnataka for career 
+credibility. 
+ 
+
+Product Impact 
+•​ Content creator for Training module; expert consultation provider; community moderator. Drives Training 
+subscription value and content authenticity. 
+ 
+
+P-05 
+Ramesh Pillai 
+Cooperative Bank Loan Officer 
+ 
+"I want to lend to these farmers. The KCC paperwork is the problem — half of them give up 
+before they get to my desk." 
+— Ramesh Pillai, Cooperative Bank Loan Officer 
+ 
+Demographics & Context 
+Age 
+52 years 
+Location 
+Krishna District Cooperative Bank, Andhra Pradesh 
+Education 
+M.Com, CAIIB certified 
+Role 
+KCC & Animal Husbandry Loan Officer, 22 years 
+Volume 
+~30 KCC applications/month, ~40% rejection rate 
+Phone 
+Office desktop + personal Android 
+Connectivity 
+Office broadband + 4G personal 
+Languages 
+Telugu (native), English (fluent), Hindi (functional) 
+ 
+Daily Behaviors 
+Pain Points 
+Goals & Aspirations 
+▸ Reviews KCC applications: Aadhaar, 
+land records, farm photos, flock size 
+declaration, income proof. 
+▸ Calls farmers 2–3 times to clarify 
+missing documents — most fail on land 
+record disputes. 
+▸ Coordinates with the AHIDF state 
+nodal officer for subsidized poultry 
+loans. 
+▸ Reports monthly KCC saturation 
+numbers to NABARD and the state 
+agriculture department. 
+● Document quality is poor — 
+handwritten land records, blurry 
+photos, mismatched names. 
+● No way to verify a farmer's actual 
+flock size or revenue without a physical 
+visit. 
+● Farmers complete only ~60% of the 
+application before abandoning; rework 
+is expensive. 
+● Cannot easily identify high-quality 
+borrowers vs. risky ones from incoming 
+applications. 
+★ Increase KCC sanction rate from 
+60% to 85% via better-prepared 
+applications. 
+★ Cut application-to-decision cycle 
+from 21 days to 7 days. 
+★ Source a steady pipeline of 
+pre-verified, document-complete 
+poultry farmer applications. 
+ 
+
+Product Impact 
+•​ B2B partner consuming 22POULTRY Credit Reference Reports and pre-screened farmer applications. Drives 
+Financial Services commission revenue. 
+ 
+
+3. Epic Overview & Backlog Prioritization 
+The product is structured around 7 epics that together deliver the value proposition: a neutral, 
+all-in-one digital platform connecting small poultry farmers to fair markets, training, finance, and 
+peer networks. Each epic ladders up to the network-effect thesis — more farmers attracts more 
+buyers, lenders, and suppliers, which attracts more farmers. 
+ 
+3.1 Epic Summary 
+Epic ID 
+Epic Name 
+Goal 
+Stories 
+EPIC-01 
+Onboarding & Identity Verification 
+Bring a semi-literate rural farmer from zero to 
+verified active user in under 8 minutes. 
+3 
+EPIC-02 
+Marketplace — Listing & Price 
+Discovery 
+Give farmers transparent NECC-anchored pricing 
+and a friction-free way to list birds/eggs. 
+3 
+EPIC-03 
+Marketplace — Transaction & 
+Trust 
+Run UPI-escrowed transactions end-to-end with 
+rating-based trust signals. 
+3 
+EPIC-04 
+Training & Education 
+Deliver vernacular video training that is 
+offline-capable and ICAR-credible. 
+3 
+EPIC-05 
+Financial Services 
+Facilitate KCC loans, insurance, and bulk feed 
+buying via partner banks and aggregators. 
+3 
+EPIC-06 
+Dashboard & Analytics 
+Give farmers cycle-level profitability visibility and 
+NECC-anchored decision support. 
+2 
+EPIC-07 
+Community & Networking 
+Build peer-trust networks and crowdsourced 
+disease early warning. 
+3 
+ 
+3.2 Backlog Prioritized by RICE Score 
+Stories are sorted by RICE score (highest = highest priority). Phase 1 must-haves dominate the top of 
+the backlog; Phase 2 features cluster lower as their dependencies and learnings come into play. 
+ 
+ID 
+Story 
+Persona 
+Priority 
+RICE 
+Phase 
+Est. 
+US-001 
+Farmer Registration with Mobile + 
+Aadhaar e-KYC 
+Farmer 
+P0 
+13,500 
+Phase 1 
+8 SP 
+US-012 
+Disease & Biosecurity Alert Push 
+Farmer 
+P0 
+12,750 
+Phase 1 
+8 SP 
+
+ID 
+Story 
+Persona 
+Priority 
+RICE 
+Phase 
+Est. 
+US-006 
+Real-Time NECC Price Feed Integration 
+Farmer 
+P0 
+11,250 
+Phase 1 
+8 SP 
+US-002 
+Farm Profile Setup with DAHD 
+Registration Sync 
+Farmer 
+P0 
+8,500 
+Phase 1 
+13 SP 
+US-017 
+NECC Price Analytics Dashboard 
+Farmer + 
+Buyer 
+P0 
+8,500 
+Phase 1 
+8 SP 
+US-003 
+Language Preference & Vernacular Voice 
+UI 
+Farmer 
+(Layer) 
+P0 
+4,500 
+Phase 1 
+21 SP 
+US-019 
+Peer Disease Early Warning System 
+Farmer + Vet 
+P1 
+4,500 
+Phase 2 
+21 SP 
+US-013 
+KCC Loan Application Facilitation 
+Farmer + 
+Bank 
+P0 
+3,938 
+Phase 1 
+21 SP 
+US-004 
+Farmer Creates Bird/Egg Listing with NECC 
+Anchor 
+Farmer 
+P0 
+3,600 
+Phase 1 
+13 SP 
+US-009 
+Post-Transaction Rating & Trust Score 
+All 
+P1 
+3,200 
+Phase 1 
+5 SP 
+US-005 
+Buyer Browses & Filters Verified Listings 
+Buyer 
+P0 
+2,400 
+Phase 1 
+8 SP 
+US-008 
+Delivery Verification & Escrow Release 
+Farmer + 
+Buyer 
+P0 
+2,400 
+Phase 1 
+13 SP 
+US-016 
+Cycle Profitability Tracker 
+Farmer 
+P1 
+2,400 
+Phase 1 
+13 SP 
+US-018 
+Farmer Community Feed 
+Farmer 
+P1 
+2,100 
+Phase 2 
+13 SP 
+US-010 
+Vernacular Video Training Module 
+Farmer 
+P0 
+2,000 
+Phase 1 
+13 SP 
+US-011 
+Offline Content Download & Sync 
+Farmer 
+P1 
+1,867 
+Phase 1 
+13 SP 
+US-007 
+UPI Escrow Payment Initiation 
+Buyer + 
+Farmer 
+P0 
+1,600 
+Phase 1 
+13 SP 
+US-014 
+Poultry Insurance Enrollment 
+Farmer 
+P1 
+1,400 
+Phase 2 
+13 SP 
+US-020 
+Expert Vet Consultation Booking 
+Vet + Farmer 
+P1 
+1,400 
+Phase 2 
+13 SP 
+US-015 
+Bulk Feed Buying Group Formation 
+Farmer 
+P1 
+1,300 
+Phase 2 
+21 SP 
+ 
+
+Total Backlog Snapshot 
+•​ P0 (Must Have): 12 stories 
+•​ P1 (Should Have): 8 stories 
+•​ Phase 1 stories: 15 
+•​ Phase 2 stories: 5 
+•​ Total Story Points: 259 SP 
+•​ Highest-RICE Story: US-001 (Farmer Registration, 13,500) — entry point to the entire funnel 
+ 
+
+4. User Stories with Acceptance Criteria 
+Each of the 20 stories below is presented in a standardized PM-grade format covering: story 
+statement, research-backed rationale, RICE breakdown, 5 detailed Gherkin acceptance criteria with 
+edge cases, external/internal dependencies, success metrics, and risk mitigation. 
+ 
+ 
+
+EPIC-01 
+Onboarding & Identity Verification 
+Bring a semi-literate rural farmer from zero to verified active user in under 8 minutes. 
+ 
+US-001 
+Farmer Registration with Mobile + Aadhaar e-KYC 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Onboarding 
+Farmer 
+Phase 1 
+13,500 
+8 SP 
+ 
+User Story 
+As a small-scale poultry farmer, 
+I want to to register on 22POULTRY using just my mobile number and Aadhaar 
+so that I can start accessing fair markets without filling complex forms or visiting an office. 
+ 
+📊 Research Context 
+Aadhaar e-KYC has 99.7% uptake among rural Indians (UIDAI 2025). The DAHD April 2025 mandate makes 
+poultry farm registration compulsory — UIDAI-linked onboarding becomes a default acquisition rail. DeHaat's 
+phygital model proves <8 min onboarding lifts D1 retention by 2.3×. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+5,000 
+3 
+90% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A new farmer downloads 
+the 22POULTRY app and 
+they enter a valid 
+10-digit Indian mobile 
+an OTP is delivered via 
+SMS within 30 seconds 
+Network unreachable: 
+cache request and retry 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+opens the registration 
+screen 
+number and tap "Send 
+OTP" 
+(P95) and the OTP input 
+screen appears 
+on connection; show 
+"no signal" banner 
+2 
+The farmer has received 
+the OTP 
+they enter the correct 
+6-digit OTP within 5 
+minutes 
+the OTP is verified, the 
+mobile number is marked 
+confirmed, and the 
+Aadhaar screen loads 
+OTP expired: allow 3 
+resend attempts within 
+15 min, then 10-min 
+cool-down 
+3 
+The farmer is on the 
+Aadhaar e-KYC screen 
+with mobile verified 
+they enter Aadhaar 
+number and consent to 
+UIDAI verification 
+name, DOB, and address 
+are auto-populated; raw 
+Aadhaar number is NOT 
+stored; only the masked 
+last-4 + reference token is 
+retained 
+Aadhaar-mobile not 
+linked: offer fallback 
+Voter ID + selfie path 
+4 
+KYC succeeds and basic 
+identity is confirmed 
+the system completes 
+verification 
+farmer receives a 
+WhatsApp welcome 
+message in their selected 
+language with a one-tap 
+link to add farm details, 
+and is auto-enrolled in the 
+local district's NECC price 
+alerts 
+WhatsApp not 
+installed: fallback to 
+SMS welcome 
+5 
+A farmer attempts to 
+re-register with the 
+same Aadhaar/mobile 
+the system detects an 
+existing account 
+show "Account exists" 
+with options to log in, 
+recover, or contact support 
+— never silently create a 
+duplicate 
+Identity theft 
+suspected: lock both 
+accounts, flag to 
+support, notify primary 
+number 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ UIDAI Authentication User Agency (AUA) license — 4–8 week regulatory approval 
+•​ WhatsApp Business API verified sender (Twilio or Gupshup) 
+•​ SMS gateway with DLT-registered templates 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Onboarding completion rate ≥ 75% 
+•​ Time-to-registered: P50 ≤ 4 min, P95 ≤ 8 min 
+•​ D1 retention of registered farmers ≥ 55% 
+
+•​ Aadhaar verification success rate ≥ 92% 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ UIDAI AUA approval is the longest pole — start applications week 1. If denied, fallback to PAN + Voter ID + selfie 
+liveness, accepting ~15% completion-rate drop. 
+ 
+
+US-002 
+Farm Profile Setup with DAHD Registration Sync 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Onboarding 
+Farmer 
+Phase 1 
+8,500 
+13 SP 
+ 
+User Story 
+As a newly-registered farmer, 
+I want to to set up my farm profile with flock size, type, and location, and have it auto-sync to the 
+DAHD mandatory poultry registration 
+so that I comply with the April 2025 government mandate and never have to fill it twice. 
+ 
+📊 Research Context 
+DAHD mandated poultry farm registration on April 4, 2025 (PIB ID 2119198). Each state has a separate animal 
+husbandry portal — Andhra Pradesh and Telangana have integration-ready APIs as of Q1 2026. Farmers who 
+use DAHD-registered platforms qualify for AHIDF subsidized loans 90 days faster. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+5,000 
+2 
+85% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A verified farmer 
+reaches the farm profile 
+screen 
+they enter farm address, 
+GPS pin, flock type 
+(broiler/layer/dual), 
+current bird count, and 
+shed photos 
+data is saved, farm photos 
+are stored in compressed 
+form (≤500KB each), and a 
+profile-complete badge is 
+shown 
+GPS denied: fall back to 
+manual village + 
+pincode + nearest 
+landmark 
+2 
+The farmer's state has 
+DAHD API integration 
+(AP, Telangana initially) 
+farm profile is saved 
+a DAHD registration 
+request is submitted 
+automatically; farmer 
+receives the state 
+DAHD API timeout: 
+queue for retry, do not 
+block farmer access to 
+the rest of the app 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+registration number via 
+WhatsApp within 72 hours 
+3 
+The farmer's state does 
+not yet have DAHD API 
+integration 
+farm profile is saved 
+a downloadable pre-filled 
+DAHD registration PDF is 
+generated; farmer is 
+shown the nearest animal 
+husbandry office address 
+and a "how to file" video 
+in their language 
+Farmer cannot reach 
+office: 22POULTRY field 
+agent assist (in pilot 
+states only) 
+4 
+A farmer submits a flock 
+size of more than 50,000 
+birds 
+the system flags this as 
+outside the SMB 
+segment 
+farmer is offered an 
+alternative enterprise-tier 
+flow with manual 
+relationship manager 
+assignment, but is not 
+blocked 
+Verification photos 
+suggest backyard farm 
+<500 birds: show 
+backyard-tier UI 
+variant 
+5 
+DAHD registration is 
+successful 
+the state number arrives 
+back via webhook 
+farmer's profile shows a 
+"DAHD Verified" badge 
+visible to all marketplace 
+buyers 
+DAHD rejects 
+(incomplete docs): 
+show specific field-level 
+remediation steps 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ DAHD state-level API access (AP & Telangana confirmed; TN, Karnataka, Maharashtra pending) 
+•​ Cloud storage with image compression pipeline 
+•​ WhatsApp Business API for status notifications 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Profile completion within 48h of registration ≥ 80% 
+•​ DAHD sync success rate ≥ 90% (in API-enabled states) 
+•​ Time-to-DAHD-number P95 ≤ 96 hours 
+ 
+Risk & Mitigation 
+Primary Risk 
+
+•​ DAHD API quality varies by state — AP/Telangana mature, others patchy. Build degradation-tolerant: PDF 
+fallback works everywhere. 
+ 
+
+US-003 
+Language Preference & Vernacular Voice UI 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Onboarding 
+Farmer (Layer) 
+Phase 1 
+4,500 
+21 SP 
+ 
+User Story 
+As a rural farmer whose primary language is Telugu, Tamil, Kannada, Hindi, Marathi, Punjabi, 
+Bengali, or Malayalam, 
+I want to to use 22POULTRY entirely in my language with voice input where I cannot type 
+so that I can transact, learn, and ask for help without ever needing English literacy. 
+ 
+📊 Research Context 
+Only 40% of Indian internet users access content in English (GrabOn 2025). Vernacular content consumption 
+grew 150% between 2020–2024. Telugu and Tamil together cover 64% of 22POULTRY's Phase 1 priority states. 
+Voice-first interfaces lift task completion among low-literacy users by 38% (Microsoft Research India, 2024). 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+5,000 
+2 
+90% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer launches the 
+app for the first time 
+the language selection 
+screen appears 
+show 9 languages with 
+native script + English 
+transliteration + audio 
+sample on tap: English, 
+Hindi, Telugu, Tamil, 
+Kannada, Marathi, Bengali, 
+Punjabi, Malayalam 
+Device locale matches 
+a supported language: 
+pre-highlight that 
+option 
+2 
+A farmer has selected 
+their language 
+they navigate any screen 
+in the app 
+all UI strings, alerts, error 
+messages, push 
+Untranslated string 
+fallback: show English, 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+notifications, WhatsApp 
+messages, and SMS are 
+delivered in the selected 
+language 
+never show 
+{{key.error}} 
+3 
+A farmer is on any 
+text-input field 
+they tap the microphone 
+icon 
+voice-to-text accepts 
+speech in their selected 
+language and converts it; 
+output is editable before 
+submission 
+Background noise: 
+show waveform 
+feedback, offer retry 
+4 
+A farmer wants to 
+change language 
+post-onboarding 
+they go to Settings → 
+Language 
+language switches 
+immediately on next 
+screen render; no app 
+restart required; 
+preference syncs across 
+mobile + web 
+Switching mid-form: 
+preserve form data, 
+re-render labels 
+5 
+A farmer is on a 
+marketplace listing with 
+a buyer who uses a 
+different language 
+the buyer messages 
+them 
+inline translation chip 
+offers one-tap 
+auto-translate; original 
+message remains 
+accessible 
+Translation API 
+unavailable: degrade 
+gracefully to "translate 
+via Google" external 
+link 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Bhashini (Govt of India translation API) or Google Cloud Translation 
+•​ Professional translation review by native speakers per language 
+•​ CRUD pipeline for translation memory updates 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ % sessions in vernacular language ≥ 75% (in pilot states) 
+•​ Voice input usage rate ≥ 25% of all text inputs 
+•​ Translation quality score ≥ 4.2/5 (native-speaker review) 
+ 
+Risk & Mitigation 
+Primary Risk 
+
+•​ Translation quality is reputational risk. Use professional translators + native QA, not raw machine translation, 
+for any farmer-facing legal/financial content. 
+ 
+
+EPIC-02 
+Marketplace — Listing & Price Discovery 
+Give farmers transparent NECC-anchored pricing and a friction-free way to list birds/eggs. 
+ 
+US-004 
+Farmer Creates Bird/Egg Listing with NECC Anchor 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Marketplace 
+Farmer 
+Phase 1 
+3,600 
+13 SP 
+ 
+User Story 
+As a farmer ready to sell my next batch of broilers (or layer eggs), 
+I want to to create a listing in under 2 minutes with the day's NECC price shown beside my asking 
+price 
+so that I can price competitively without calling 4 traders, and buyers see I am asking a fair price. 
+ 
+📊 Research Context 
+Down to Earth 2025 Punjab study: integrators pay farmers ₹17.17/bird while selling at ₹191.17 — a 91% 
+margin extraction. NECC price visibility at the moment of listing is the single highest-leverage intervention. 
+NECC publishes zonal rates daily for 30+ zones; integration via daily scrape or partnership is feasible. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+4,000 
+3 
+60% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer with a 
+complete farm profile 
+taps "Sell My Birds" 
+they enter quantity, 
+average live weight, 
+ready-date, and 
+pickup/delivery 
+preference 
+the form is pre-filled with 
+their last listing's details 
+(where applicable); only 
+quantity and weight are 
+mandatory 
+First-time seller: show 
+30-second tutorial 
+video in their language 
+2 
+A farmer is entering 
+their asking price 
+the price field receives 
+focus 
+today's NECC rate for their 
+nearest zone is displayed 
+inline; the farmer sees 
+how their asking price 
+compares 
+(above/at/below NECC) 
+with color coding 
+(green/amber/red) 
+NECC data >24h stale: 
+show a "yesterday's 
+rate" banner with 
+explicit disclaimer 
+3 
+A farmer submits a 
+listing 
+all required fields 
+validate 
+the listing goes live within 
+2 minutes and is visible to 
+all verified buyers within a 
+200-km radius; farmer 
+receives WhatsApp 
+confirmation with the 
+listing link 
+Photo upload fails on 
+slow network: allow 
+listing without photos; 
+prompt to add later 
+4 
+A listing has been live for 
+48 hours with no buyer 
+interest 
+the system detects low 
+engagement 
+farmer receives a 
+price-revision suggestion: 
+"Lowering your price by 
+₹2/kg brings you within 
+NECC range — would you 
+like to update?" 
+Farmer wants to hold 
+price: allow opt-out 
+from suggestions 
+5 
+A farmer cancels a listing 
+after a buyer has shown 
+interest (clicked or 
+messaged) 
+cancellation is requested 
+farmer is warned about 
+reputation impact; if 
+confirmed, listing is 
+cancelled and reason is 
+logged; repeated 
+cancellations within 30 
+days reduce trust score 
+Genuine reason (bird 
+flu in district, sudden 
+mortality): no penalty if 
+verified 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ NECC daily zonal price feed (partnership or licensed scrape — see Open Question OQ-001) 
+•​ Image compression and CDN 
+•​ Geospatial buyer-matching service 
+ 
+
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Time-to-publish P50 ≤ 90 seconds, P95 ≤ 3 minutes 
+•​ Listing → first buyer message: P50 ≤ 12 hours 
+•​ Listing → completed sale rate ≥ 60% 
+•​ Average farmer-realized price within 5% of NECC rate 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ NECC data access is the single biggest dependency. Plan A: licensed partnership. Plan B: licensed scrape with 
+attribution. Plan C: crowd-sourced farmer-reported prices with verification. 
+ 
+
+US-005 
+Buyer Browses & Filters Verified Listings 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Marketplace 
+Buyer 
+Phase 1 
+2,400 
+8 SP 
+ 
+User Story 
+As a poultry processor sourcing 500–1,000 birds per week, 
+I want to to browse live listings filtered by district, flock size, weight, ready-date, and seller trust 
+rating 
+so that I can replace 4 hours of phone calls with a 15-minute scan of verified options. 
+ 
+📊 Research Context 
+Ilyas-persona buyers source from 30–40 farmer contacts via WhatsApp/phone — a process that consumes 4 
+hours/day. Andersson et al. (ScienceDirect) supermarket-procurement research shows direct-channel buyers 
+pay 20%+ over middleman prices but capture more reliable supply; speed of discovery is the limiting factor. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+800 
+3 
+80% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A verified buyer logs in 
+they open the 
+marketplace tab 
+show all active listings 
+within their default radius 
+(configurable, default 200 
+km), sorted by ready-date 
+proximity and seller trust 
+score 
+No listings available: 
+show "expanding to 
+500 km" option + 
+email-me-when-availa
+ble toggle 
+2 
+A buyer wants to narrow 
+results 
+they apply filters 
+(district, weight range, 
+ready-date window, min 
+filtered list updates in <1 
+second; filter chips persist 
+across navigation; "save 
+Over-filtered = 0 
+results: suggest the 
+single filter to relax 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+seller rating, 
+DAHD-verified only) 
+this filter" creates a 
+recurring search alert 
+3 
+A buyer taps a listing 
+the detail screen loads 
+shows seller name + 
+verification badges (DAHD, 
+KYC, training certified), 
+recent transaction count, 
+average rating, full photos, 
+exact weight + count, 
+pickup or delivery options, 
+and a "Contact Seller" 
+action 
+Seller has zero 
+transaction history: 
+show "New seller" 
+badge, do not penalize 
+4 
+A buyer wants to 
+commit to a purchase 
+they tap "Make Offer" 
+with price, quantity, and 
+pickup date 
+offer is sent to seller via 
+WhatsApp + in-app 
+notification; seller has 6 
+hours to accept, decline, 
+or counter; buyer sees 
+status in real-time 
+Seller does not respond 
+in 6h: auto-expire, 
+refund any reservation 
+hold 
+5 
+A buyer wants to repeat 
+a previous order 
+they go to Order History 
+→ "Source Again" 
+system surfaces all current 
+listings from 
+previously-used sellers and 
+adjacent sellers with 
+similar specs; one-tap to 
+send offer at last 
+transacted price 
+Previous seller has no 
+active listing: notify 
+them via WhatsApp 
+that this buyer is 
+sourcing again 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Geospatial search service 
+•​ Seller reputation scoring engine (US-009 dependency) 
+•​ WhatsApp notifications 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Buyer time-on-search P50 ≤ 5 minutes 
+•​ Filter usage rate ≥ 60% 
+•​ Listing-view → offer-sent conversion ≥ 12% 
+•​ Offer → completed sale ≥ 70% 
+ 
+
+Risk & Mitigation 
+Primary Risk 
+•​ Buyer-side liquidity is the hard part: if there are not enough quality listings per district, buyers churn fast. 
+Maintain a manual concierge layer in Phase 1 to ensure every buyer sees 5+ relevant listings per visit. 
+ 
+
+US-006 
+Real-Time NECC Price Feed Integration 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Marketplace 
+Farmer 
+Phase 1 
+11,250 
+8 SP 
+ 
+User Story 
+As a farmer, 
+I want to to see today's NECC egg/broiler price for my zone updated by 11:00 AM each morning, 
+with 7-day and 30-day trend 
+so that I make sell-or-hold decisions based on actual market data, not the trader's word. 
+ 
+📊 Research Context 
+NECC declares zonal egg prices daily for 30+ zones; broiler rates are published by state poultry federations. The 
+2022 CCI ruling forced NECC to label prices "advisory" but they remain the de facto benchmark. Real-time 
+visibility is the single most-requested feature in qualitative farmer interviews (DeHaat playbook validation). 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+5,000 
+3 
+75% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+The system fetches NECC 
+data daily 
+the daily NECC 
+publication occurs 
+(typically 09:30–11:00 
+AM IST) 
+all 30+ zonal prices are 
+ingested, validated for 
+anomalies (e.g., >15% 
+day-over-day swing 
+flagged), and pushed to all 
+farmers in matching zones 
+by 11:30 AM 
+NECC data delayed: 
+continue showing 
+previous day with 
+"yesterday's rate" 
+banner 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+2 
+A farmer opens the app 
+any time during the day 
+they land on Home 
+their zone's current NECC 
+rate is shown prominently 
+at the top with a delta vs. 
+yesterday (₹+0.20 ↑ / 
+₹–0.15 ↓) and a 7-day 
+mini-chart 
+Zone not yet mapped: 
+show nearest available 
+zone with explicit label 
+3 
+A farmer wants historical 
+trend 
+they tap the price card 
+a full-screen chart shows 
+7-day, 30-day, 90-day, and 
+1-year price trends with 
+seasonality markers 
+(festival demand, 
+monsoon, summer heat) 
+Data gap >7 days: 
+show as dotted line 
+with disclaimer 
+4 
+A farmer wants to be 
+alerted on price moves 
+they enable "Price 
+Alerts" with a threshold 
+(e.g., notify if rate moves 
+>₹0.50 in 24h) 
+WhatsApp + push 
+notification delivered 
+within 30 minutes of 
+threshold breach 
+Notifications muted 
+system-wide: in-app 
+red dot indicator on 
+next open 
+5 
+A farmer is on the 
+marketplace listing 
+creation screen 
+they enter an asking 
+price 
+NECC rate is shown inline 
+with a "fair price" indicator 
+(green ≤ NECC, amber 
+within 5% below, red >5% 
+below) 
+Cross-zone listings: 
+show both zones' rates 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ NECC data licensing or partnership (Open Question OQ-001 — critical) 
+•​ State poultry federation broiler rate sources 
+•​ Time-series database (InfluxDB or TimescaleDB) 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Daily NECC update by 11:30 AM ≥ 98% of business days 
+•​ Farmer 7-day price-card engagement ≥ 70% 
+•​ % of listings priced within 5% of NECC ≥ 65% 
+•​ Price alert opt-in rate ≥ 50% 
+ 
+Risk & Mitigation 
+
+Primary Risk 
+•​ NECC may resist licensing terms favorable to a competing platform. Backup plan: crowdsourced 
+farmer-reported prices with statistical verification; combined with state federation rates published in govt 
+gazettes. 
+ 
+
+EPIC-03 
+Marketplace — Transaction & Trust 
+Run UPI-escrowed transactions end-to-end with rating-based trust signals. 
+ 
+US-007 
+UPI Escrow Payment Initiation 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Trust & Payment 
+Buyer + Farmer 
+Phase 1 
+1,600 
+13 SP 
+ 
+User Story 
+As a buyer who has just agreed to purchase 800 birds at ₹105/kg, 
+I want to to pay the agreed amount into an escrow account via my UPI app, where it is held until 
+delivery is confirmed 
+so that the seller is protected from buyer default and I am protected from quality failures. 
+ 
+📊 Research Context 
+India processes 16.7 billion UPI transactions monthly worth ₹23.24 lakh crore (RBI/NPCI Jan 2025). 40% of 
+rural internet users transact via UPI. Tanihub Indonesia's collapse (lending arm Tanifund) proves: facilitate 
+payments, do not become the bank. Escrow via licensed PSP partner is the correct architecture. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+800 
+3 
+60% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A buyer and seller have 
+agreed on terms via the 
+marketplace 
+the buyer taps "Pay 
+Now" 
+an escrow payment intent 
+is created; UPI collect 
+request is sent to any of 
+buyer's linked UPI apps 
+(PhonePe, GPay, Paytm, 
+BHIM) 
+Buyer has no UPI: 
+fallback to NEFT/IMPS 
+with manual 
+reconciliation 
+2 
+The UPI collect request 
+is sent 
+the buyer authorizes the 
+payment in their UPI app 
+within 15 minutes 
+funds debit from buyer 
+and credit to a licensed 
+escrow account; both 
+parties receive WhatsApp 
+confirmation with a 
+transaction reference; 
+seller is cleared to dispatch 
+Authorization timeout: 
+collect request expires, 
+transaction reverts to 
+"pending", buyer can 
+retry 
+3 
+The transaction amount 
+exceeds ₹1,00,000 
+the buyer initiates 
+payment 
+system offers split 
+payment (50% now, 50% 
+on dispatch confirmation) 
+to stay within typical UPI 
+per-transaction caps 
+Buyer prefers single 
+transaction: route via 
+RTGS instead, with 
+same escrow logic 
+4 
+Payment is in escrow 
+either party views the 
+transaction 
+a clear status timeline is 
+shown: "Paid → In Escrow 
+→ Dispatched → 
+Delivered → Released to 
+Seller" with timestamps 
+and the relevant UPI 
+reference numbers 
+Status sync lag: show 
+"last updated" 
+timestamp, allow 
+manual refresh 
+5 
+Payment fails for any 
+reason (insufficient 
+balance, bank decline, 
+UPI app issue) 
+the failure is reported 
+back 
+buyer is notified with the 
+specific reason in their 
+language; one-tap retry is 
+offered with the same UPI 
+reference; seller is 
+informed that payment is 
+pending 
+Repeated failure (3 
+attempts): suggest 
+alternative UPI app or 
+NEFT path 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Licensed Payment Service Provider with escrow capability (Razorpay, Cashfree, or Easebuzz) 
+•​ NPCI UPI integration via PSP 
+•​ Reconciliation engine for escrow ledger 
+ 
+
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Payment success rate (first attempt) ≥ 88% 
+•​ Payment authorization P95 ≤ 90 seconds 
+•​ Escrow disputes per 1000 transactions ≤ 8 
+•​ Reconciliation accuracy = 100% (zero tolerance) 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ Escrow licensing is the critical path. Working as a PSP's sub-merchant is faster than getting our own PA license. 
+Build dispute and reconciliation tooling before scaling transaction volume. 
+ 
+
+US-008 
+Delivery Verification & Escrow Release 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Trust & Payment 
+Farmer + Buyer 
+Phase 1 
+2,400 
+13 SP 
+ 
+User Story 
+As a farmer who has handed over my birds to the buyer's truck, 
+I want to to confirm delivery via a one-time code from the buyer, after which escrow funds 
+release to me within 2 hours 
+so that I receive my payment fast and the buyer knows quality has been confirmed. 
+ 
+📊 Research Context 
+Reshamandi's collapse came from over-building logistics and inventory. 22POULTRY remains asset-light: buyers 
+handle their own transport. The 2-hour escrow release window matches farmer expectations (qualitative 
+interviews) and is feasible with NEFT/IMPS. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+800 
+3 
+50% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A buyer is taking physical 
+delivery of birds/eggs at 
+the farm gate 
+the buyer enters the 
+4-digit delivery OTP from 
+their app into the seller's 
+"Confirm Handover" 
+screen (or vice versa) 
+handover is recorded with 
+timestamp + GPS; both 
+parties receive WhatsApp 
+confirmation; a 24-hour 
+quality-dispute window 
+opens 
+OTP entry fails after 3 
+attempts: support flow 
+with photo evidence + 
+voice call confirmation 
+2 
+The 24-hour 
+quality-dispute window 
+the window closes 
+escrow auto-releases to 
+seller via NEFT/IMPS 
+within 2 hours; seller 
+Bank holiday: extend to 
+next working day with 
+explicit communication 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+passes with no dispute 
+raised 
+receives WhatsApp with 
+bank credit confirmation; 
+commission (3-5%) is 
+deducted to platform 
+account 
+3 
+The buyer raises a 
+quality dispute within 24 
+hours 
+they submit dispute with 
+photos and a 
+written/voice statement 
+escrow is frozen; seller is 
+notified; both parties have 
+72 hours to upload 
+evidence; 22POULTRY 
+mediation team reviews 
+Dispute frivolous (e.g., 
+buyer's remorse): seller 
+protection via verified 
+handover GPS + 
+handover OTP 
+timestamp 
+4 
+A mediation decision is 
+made within 72 hours 
+decision is published 
+escrow is released 
+according to decision 
+(partial refund, full refund, 
+or release to seller); 
+decision is logged with 
+reasoning; both parties 
+can appeal within 48 hours 
+Appeal escalation: 
+senior reviewer + 
+optional offline 
+arbitration through 
+state APMC 
+ombudsman 
+5 
+The buyer fails to arrive 
+for pickup on the agreed 
+date 
+seller marks "buyer 
+no-show" with 
+timestamp and GPS 
+buyer is contacted via 
+WhatsApp + voice call; if 
+no response within 24 
+hours, escrow is fully 
+refunded and buyer trust 
+score is reduced 
+Genuine emergency: 
+appeal process with 
+documentation 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ IMPS/NEFT integration via PSP for fast disbursement 
+•​ Dispute resolution workflow and case management 
+•​ Photo evidence storage with EXIF preservation 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Successful delivery → escrow release ≥ 95% within 2 hours of window close 
+•​ Dispute rate ≤ 4% of completed transactions 
+•​ Mediation cycle time P95 ≤ 72 hours 
+•​ Repeat seller rate (transacted 3+ times) ≥ 70% 
+ 
+
+Risk & Mitigation 
+Primary Risk 
+•​ Dispute resolution is operationally expensive. Aggressive verification upfront (US-002 DAHD, US-009 ratings) 
+reduces dispute rate. Plan staffing for 4 dispute reviewers per 10,000 monthly transactions. 
+ 
+
+US-009 
+Post-Transaction Rating & Trust Score 
+P1 — SHOULD HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Trust & Payment 
+All 
+Phase 1 
+3,200 
+5 SP 
+ 
+User Story 
+As a farmer or buyer who has just completed a transaction, 
+I want to to rate my counterparty on punctuality, fairness, quality, and communication 
+so that future participants can trust the platform and my own reputation grows with good 
+behavior. 
+ 
+📊 Research Context 
+Marketplace trust is the moat. eBay's 1996 feedback system is the canonical example. For low-literacy users, 
+visual + emoji ratings outperform numeric scales by 22% completion (Microsoft Research India). Trust score 
+must be tamper-resistant — no fake-review economy. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+4,000 
+2 
+80% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A transaction reaches 
+"Completed" status 
+(escrow released) 
+within 7 days 
+post-completion 
+both parties receive a 
+rating prompt via 
+WhatsApp with a one-tap 
+link to the rating screen 
+User does not rate: 1 
+reminder at 48h, no 
+further nag 
+2 
+A user is on the rating 
+screen 
+they rate (1-5 stars) 
+across 4 dimensions: 
+punctuality, fairness, 
+quality, communication 
+rating is submitted; an 
+optional voice or text 
+comment can be added; 
+the counterparty's trust 
+Voice comment 
+auto-transcribes for 
+searchability 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+score updates within 1 
+hour 
+3 
+A user views any farmer 
+or buyer profile 
+they tap the trust badge 
+show overall trust score 
+(weighted average of last 
+20 ratings), total 
+transactions completed, % 
+on-time, % positive — but 
+never individual rater 
+identities 
+New user (<5 ratings): 
+show "Building 
+reputation" badge 
+instead of misleading 
+score 
+4 
+A user attempts to rate 
+the same counterparty 
+multiple times from the 
+same transaction 
+system detects duplicate 
+block submission with 
+clear messaging; allow 
+rating edit within 48h of 
+initial submission 
+Two different 
+transactions same 
+parties: each rated 
+independently 
+5 
+A pattern of fake or 
+coordinated ratings is 
+detected 
+fraud heuristics flag 
+(e.g., 5 ratings within 1 
+hour from new accounts 
+to same seller) 
+flagged ratings are 
+quarantined; affected 
+users receive a warning; 
+repeat offenders are 
+suspended 
+False positive: appeal 
+flow with manual 
+review 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Trust score calculation engine with anti-gaming heuristics 
+•​ Voice-to-text for comment transcription 
+•​ WhatsApp templates for rating prompts 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Rating completion rate ≥ 55% 
+•​ Trust score correlation with repeat transactions ≥ 0.7 
+•​ Detected fraud ratings (quarantined) ≤ 2% of total 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ Cold-start: first 1000 farmers will have no reputation. Bootstrap with 22POULTRY field agent verification badges 
+for Phase 1, transition to organic ratings as volume builds. 
+
+ 
+
+EPIC-04 
+Training & Education 
+Deliver vernacular video training that is offline-capable and ICAR-credible. 
+ 
+US-010 
+Vernacular Video Training Module 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Training 
+Farmer 
+Phase 1 
+2,000 
+13 SP 
+ 
+User Story 
+As a farmer with Class 10 education or less, 
+I want to to watch short (5–8 min) video lessons in my language on FCR optimization, biosecurity, 
+vaccination, and disease management 
+so that I reduce mortality, improve feed efficiency, and earn more per cycle. 
+ 
+📊 Research Context 
+Industry-benchmark FCR is 1.6:1; smallholder average is 2.0–2.1 — a 12–15% feed cost gap. Reducing 
+mortality from 6% to 2–3% adds 5%+ to gross output. Vernacular YouTube poultry channels with 50k–200k 
+subscribers prove appetite exists. ICAR Central Avian Research Institute (Izatnagar) has authoritative content 
+but no scalable delivery. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+5,000 
+2 
+80% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer opens the 
+Training tab 
+they land on the 
+curriculum 
+show 6 starter tracks in 
+their language: Brooding 
+Setup, Vaccination 
+Schedule, Feed 
+Management, Biosecurity 
+SOP, Disease Identification, 
+Pricing & Sales — each 
+with 4–6 lessons, total 
+30–45 minutes 
+New farmer with no 
+flock yet: highlight 
+Brooding track first 
+2 
+A farmer taps a lesson 
+the video player loads 
+video plays in the user's 
+language with vernacular 
+subtitles, optional 
+0.75x/1x/1.5x speed, and 
+downloadable for offline 
+viewing (≤30MB per 
+lesson) 
+Slow network: 
+auto-select lower 
+resolution; show 
+"watching on slow 
+connection" indicator 
+3 
+A farmer completes a 
+lesson (watched ≥ 90%) 
+completion is registered 
+lesson is marked 
+complete; progress 
+updates on dashboard; if 
+track is complete, a 
+shareable certificate is 
+generated with farmer's 
+name + ICAR-KVK 
+co-branding 
+Network drops 
+mid-lesson: progress 
+resumes on next open 
+4 
+A farmer wants to ask a 
+question about a lesson 
+they tap "Ask a Vet" 
+within the lesson 
+voice or text question is 
+submitted to a moderated 
+forum; certified vets 
+respond within 24 hours; 
+answer is visible to other 
+farmers viewing the same 
+lesson 
+Premium subscribers 
+get priority response 
+within 4 hours 
+5 
+A farmer completes 3+ 
+tracks 
+they qualify for a 
+"Certified Poultry 
+Manager" badge 
+badge appears on their 
+marketplace profile, lifting 
+buyer trust; badge counts 
+toward financial services 
+pre-screening 
+Badge revocation if 
+dispute pattern 
+emerges later 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Content production partnership with ICAR-KVK or state veterinary universities 
+
+•​ Vernacular voiceover studio (Telugu, Tamil, Kannada, Hindi minimum for Phase 1) 
+•​ Adaptive video CDN with offline-capable client (US-011 dependency) 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Lesson completion rate ≥ 60% 
+•​ Track completion rate ≥ 35% 
+•​ Training-active farmer mortality rate vs. control: at least 1.5 percentage points lower by cycle 3 
+•​ Certificate-holder transaction rate uplift ≥ 20% 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ Content quality is reputational. Partner with ICAR/KVK to co-brand; do not produce content alone. Budget 
+₹50,000–₹1,00,000 per finished 6-minute vernacular lesson with production + voiceover + review. 
+ 
+
+US-011 
+Offline Content Download & Sync 
+P1 — SHOULD HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Training 
+Farmer 
+Phase 1 
+1,867 
+13 SP 
+ 
+User Story 
+As a farmer whose 4G signal drops during work hours in the shed, 
+I want to to download lessons, NECC price snapshots, and reference content for offline use, with 
+auto-sync when I return to signal 
+so that I learn and stay informed even when the network is unreliable. 
+ 
+📊 Research Context 
+Ookla H1 2025: 88.9% of Indian villages have 4G coverage above -110 dBm, but in-shed signal drops are 
+common. Offline-first design is non-negotiable for rural products. Stellapps and DeHaat both ship 
+offline-capable Android apps. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+2,800 
+2 
+80% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer is on any video 
+lesson screen with 
+sufficient device storage 
+(≥100 MB free) 
+they tap "Download for 
+Offline" 
+video downloads in 
+compressed form (≤30 
+MB), is stored encrypted 
+on device, and is available 
+in offline mode for 30 days 
+Insufficient storage: 
+prompt to free space, 
+do not silently fail 
+2 
+A farmer is offline 
+they open the app 
+a clearly-labeled "Offline 
+Mode" banner appears; 
+downloaded lessons play 
+normally; cached NECC 
+Cache >7 days old: 
+show "outdated" 
+warning 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+price (with explicit 
+timestamp) is visible; any 
+new actions (listing 
+creation, ratings) are 
+queued 
+3 
+A farmer has queued 
+offline actions 
+the device returns to 
+network 
+queued actions sync in 
+priority order (payments 
+→ listings → ratings → 
+other) within 30 seconds; 
+conflicts (e.g., listing 
+edited online and offline) 
+are flagged for user 
+resolution 
+Sync fails (server error): 
+retry with exponential 
+backoff, never lose user 
+data 
+4 
+A farmer's device is low 
+on storage 
+they reach 80% of 
+allocated 22POULTRY 
+storage 
+show a 
+manage-downloads screen 
+with size of each 
+downloaded item and 
+one-tap clear; oldest 
+unused downloads 
+auto-removed first 
+User has flagged 
+content as "always 
+keep": exempt from 
+auto-cleanup 
+5 
+A farmer with offline 
+data installs the app on a 
+new device 
+they log in 
+critical data (profile, last 
+30 days transaction 
+history, certificates) syncs 
+automatically; 
+downloaded video lessons 
+are re-downloaded on 
+demand 
+New device data plan 
+limit: ask before bulk 
+re-download 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Service worker / Android background sync 
+•​ Local SQLite for offline state 
+•​ Conflict resolution UX for sync conflicts 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Offline action sync success ≥ 99% 
+•​ % farmers using offline mode at least once/month ≥ 40% 
+
+•​ Average offline-cached lessons per active farmer ≥ 3 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ Sync conflicts can corrupt data. Use last-write-wins with audit log; never silently drop user data. Test with chaos 
+engineering (random network drops). 
+ 
+
+US-012 
+Disease & Biosecurity Alert Push 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Training 
+Farmer 
+Phase 1 
+12,750 
+8 SP 
+ 
+User Story 
+As a farmer in a district where avian influenza has been reported, 
+I want to to receive an instant alert with specific biosecurity steps and a one-tap path to file 
+insurance/compensation claims 
+so that I protect my flock and recover financially if an outbreak hits. 
+ 
+📊 Research Context 
+India has had annual HPAI outbreaks since 2006. March 2025: 602,000 birds culled in 8 AP outbreaks 
+(WOAH/Reuters); first H5N1 human fatality in 4 years. DAHD's April 2025 strategy mandates biosecurity SOPs 
++ farm registration + surveillance. Demand contracts 15–20% in affected regions for 4–6 weeks (Mordor 2025) 
+— early warning protects neighboring farms too. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+5,000 
+3 
+85% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+DAHD or WOAH reports 
+an HPAI/Newcastle 
+outbreak within 50 km 
+of a farmer's registered 
+location 
+official notification is 
+published 
+farmer receives push + 
+WhatsApp alert within 2 
+hours with: outbreak 
+location, affected radius, 
+current biosecurity 
+protocol (5-step checklist), 
+and a "File Claim" CTA 
+Outbreak unconfirmed 
+(rumor): label as 
+"monitoring", do not 
+publish alert 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+2 
+A farmer receives a 
+biosecurity alert 
+they tap "View Protocol" 
+show step-by-step 
+protocol in their language 
+with images: (1) Restrict 
+farm access, (2) Disinfect 
+entry points, (3) Isolate 
+sick birds, (4) Notify 
+nearest vet, (5) Stop bird 
+movement 
+Protocol updates from 
+DAHD: push live update 
+to all affected users 
+3 
+A farmer suspects an 
+outbreak on their own 
+farm 
+they tap "Report 
+Suspected Outbreak" 
+a vet is paged within 1 
+hour during business 
+hours, 4 hours otherwise; 
+report is shared with 
+DAHD if user consents; if 
+3+ reports cluster within 
+72h in a 10-km radius, all 
+farmers in that radius 
+receive a community alert 
+False alarm prevention: 
+vet confirms before 
+broader alert 
+4 
+A farmer has confirmed 
+losses from an HPAI 
+outbreak 
+they tap "File 
+Compensation Claim" 
+within the alert 
+pre-filled LHDCP claim 
+form is generated using 
+farm profile + flock count + 
+photos; submitted to state 
+animal husbandry 
+department within 24 
+hours; status tracking is 
+provided 
+State portal 
+unavailable: queue and 
+retry; provide manual 
+escalation 
+5 
+A farmer has poultry 
+insurance via the 
+platform 
+an outbreak triggers 
+their claim eligibility 
+inline CTA to "Process 
+Insurance Claim Now" 
+appears in the alert; 
+one-tap to initiate; 
+documentation 
+auto-populated 
+No insurance: show 
+inline "Get Insured for 
+Future" CTA at end of 
+crisis cycle 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ DAHD / WOAH alert data feeds (RSS, scraping, or partnership) 
+•​ Geofencing service 
+•​ Insurance partner API integration (US-014 dependency) 
+•​ Vet on-call roster 
+ 
+Success Metrics 
+
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Alert delivery within 2h of DAHD publication ≥ 98% 
+•​ Biosecurity protocol view-through rate ≥ 70% 
+•​ Claim filing rate of eligible farmers ≥ 50% 
+•​ Outbreak-contained farmer mortality vs. unalerted control ≥ 30% reduction 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ False positives erode trust; false negatives cost lives and flocks. Manual confirmation step in Phase 1 
+(22POULTRY ops team verifies before broadcast). Move to automated only after >100 alerts validated. 
+ 
+
+EPIC-05 
+Financial Services 
+Facilitate KCC loans, insurance, and bulk feed buying via partner banks and aggregators. 
+ 
+US-013 
+KCC Loan Application Facilitation 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Financial 
+Farmer + Bank 
+Phase 1 
+3,938 
+21 SP 
+ 
+User Story 
+As a farmer without formal credit access, 
+I want to to apply for a Kisan Credit Card (up to ₹1.6 lakh collateral-free) at 4% effective interest, 
+with 22POULTRY pre-filling my documentation and routing me to a partner bank 
+so that I move from 36% moneylender interest to 4% formal credit and save ₹40,000+ per cycle. 
+ 
+📊 Research Context 
+Inc42 Agri-Fintech 2022: 70% of farmers depend on informal credit at 24–60% interest vs. 7% under priority 
+sector lending. DAHD's KCC special drive sanctioned 25 lakh AH&D KCCs against a target of 1.37 crore — a 1.12 
+crore farmer gap. Pashu KCC offers Rs 1.6L collateral-free. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+1,750 
+3 
+75% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer with a 
+complete profile + ≥1 
+transaction history 
+opens "Get a Loan" 
+they tap "Apply for KCC" 
+show eligibility check 
+based on profile 
+completeness (Aadhaar 
+verified, DAHD registered, 
+≥1 transaction); if eligible, 
+show pre-filled KCC 
+application; if not, show 
+specific remediation steps 
+Land record disputes 
+(common rejection 
+reason): show advisory 
++ alternative loan 
+products 
+2 
+A farmer is on the 
+pre-filled KCC application 
+they review and add 
+missing info (land 
+records upload, bank 
+account) 
+application is validated; a 
+"22POULTRY Credit 
+Reference Report" is 
+generated showing 
+6-month transaction 
+history, NECC-anchored 
+revenue estimates, and 
+DAHD verification status 
+Land records missing: 
+offer e-Bhumi / state 
+land portal links and 
+document templates 
+3 
+A farmer submits a 
+complete application 
+they choose a partner 
+bank (3–5 partners in 
+pilot states) 
+application is securely 
+transmitted to the partner 
+bank via API; farmer 
+receives a tracking ID and 
+expected decision date; 
+bank receives the 
+22POULTRY Credit 
+Reference + supporting 
+documents 
+API downtime: queue 
+with retry; never lose 
+the application 
+4 
+A partner bank requests 
+additional documents or 
+clarification 
+they update application 
+status via API or portal 
+farmer receives WhatsApp 
++ push notification with 
+the specific request in 
+their language and a 
+one-tap upload path 
+Farmer ignores 3 
+reminders: offer field 
+agent assist (Phase 1 
+pilot only) 
+5 
+A loan is sanctioned 
+partner bank confirms 
+disbursement 
+farmer receives WhatsApp 
+confirmation, KCC details, 
+repayment schedule; 
+22POULTRY receives 
+commission per partner 
+agreement; farmer's 
+profile shows "KCC Holder" 
+badge and is offered 
+insurance/feed financing 
+add-ons 
+Rejected: detailed 
+reason + advisory on 
+what to fix 
+ 
+Dependencies 
+
+External & Internal Dependencies 
+•​ Partner bank API integrations (Bank of India, Andhra Bank, AP/Telangana Coop Bank — see OQ-003) 
+•​ Account aggregator framework for income verification 
+•​ Document storage with DPDP-compliant audit trail 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Application start → submission conversion ≥ 70% (vs. baseline 40% direct-to-bank) 
+•​ Submission → sanction conversion ≥ 60% 
+•​ Median time-to-sanction ≤ 14 days 
+•​ Revenue per sanctioned KCC ≥ ₹1,500 commission 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ Bank API quality varies wildly. Start with 1-2 banks where founder has direct relationships. Account aggregator 
+framework still maturing — fallback to manual document submission. 
+ 
+
+US-014 
+Poultry Insurance Enrollment 
+P1 — SHOULD HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Financial 
+Farmer 
+Phase 2 
+1,400 
+13 SP 
+ 
+User Story 
+As a farmer worried about catastrophic flock loss from disease, 
+I want to to buy poultry insurance covering HPAI, Newcastle, fire, and theft for ₹2–4 per bird per 
+cycle 
+so that a single outbreak does not wipe out my year's income. 
+ 
+📊 Research Context 
+GramCover and similar rural insurance platforms validate the model; ~10–15% insurance commission flows 
+back to facilitators. LHDCP only covers culled birds during officially-declared outbreaks — most farmer losses 
+are uncompensated. ICAR data: 9M+ birds culled since 2006. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+2,000 
+2 
+70% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer with a 
+complete profile opens 
+"Insure My Flock" 
+they review the standard 
+product (HPAI + 
+Newcastle + fire + theft) 
+show premium estimate 
+based on flock count + 
+flock type + state; show 
+what is covered, what is 
+not, and claim process in 
+their language 
+High-risk district: 
+surcharge applied with 
+explicit explanation 
+2 
+A farmer wants to enroll 
+they tap "Buy Now" and 
+confirm premium 
+payment via UPI; policy is 
+issued by partner insurer 
+within 24 hours; PDF 
+Payment fails: retry; 
+never charge without 
+policy issuance 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+policy document is 
+delivered via WhatsApp; 
+farmer's profile shows 
+"Insured" badge 
+3 
+A farmer wants to file a 
+claim post-outbreak 
+they tap "File Claim" 
+from the disease alert 
+(US-012) or insurance 
+menu 
+claim is pre-filled with 
+farm profile + flock count + 
+DAHD outbreak reference 
++ photos; submitted to 
+insurer with 22POULTRY 
+mediation; status tracked 
+Photo evidence 
+missing: vet field visit 
+option 
+4 
+A claim is approved 
+insurer confirms payout 
+funds disburse directly to 
+farmer's bank account; 
+22POULTRY gets 
+confirmation; farmer can 
+renew next cycle 
+automatically 
+Partial approval: show 
+specific deductions 
+reasoning 
+5 
+A farmer's policy is 
+nearing expiry 
+within 14 days of expiry 
+auto-renewal prompt via 
+WhatsApp + push; option 
+for one-tap renewal; 
+option to upgrade 
+coverage 
+Farmer churns: 
+graceful exit survey 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Insurance partner (IFFCO Tokio, Bajaj Allianz, or similar — see OQ-003) 
+•​ IRDA-compliant policy issuance API 
+•​ Claim mediation workflow 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Insurance attach rate among DAHD-verified farmers ≥ 25% 
+•​ Claim → payout median time ≤ 21 days 
+•​ Renewal rate ≥ 70% 
+ 
+Risk & Mitigation 
+
+Primary Risk 
+•​ Insurance partner adverse selection: ensure underwriting based on DAHD verification + training completion to 
+keep loss ratio manageable. 
+ 
+
+US-015 
+Bulk Feed Buying Group Formation 
+P1 — SHOULD HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Financial 
+Farmer 
+Phase 2 
+1,300 
+21 SP 
+ 
+User Story 
+As a farmer paying retail prices for feed (60–75% of my production cost), 
+I want to to join a buying group with neighboring farmers and procure feed at bulk wholesale 
+rates from verified mills 
+so that I save 5–10% on feed cost — that's ₹30,000–₹50,000 per cycle on a 5,000-bird operation. 
+ 
+📊 Research Context 
+Feed accounts for 60–75% of production cost (CareEdge 2024). 2020–21 shock: soybean meal tripled in 12 
+months. Bulk-buying via collectives is a proven mechanism in dairy (Amul). Pinduoduo group-buying 
+mechanics scaled rural China. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+2,500 
+2 
+65% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer opens "Bulk 
+Feed Group" 
+they view active groups 
+in their district 
+show: number of farmers, 
+total volume committed, 
+current group price, target 
+volume, days remaining, 
+partner mill identity 
+No active group: show 
+"Start a Group" CTA 
+2 
+A farmer wants to join a 
+group 
+they commit a quantity 
+(e.g., 50 bags of layer 
+feed) 
+commitment is recorded; 
+group price adjusts 
+dynamically based on 
+aggregate volume; farmer 
+Group volume 
+threshold hit: locked-in 
+price announced to all 
+members 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+gets WhatsApp 
+confirmation 
+3 
+A buying group hits 
+target volume 
+group closes 
+partner mill confirms 
+order; delivery is 
+scheduled within 7 days; 
+farmers pay via UPI 
+escrow; mill ships to a 
+central pickup point or 
+door-delivery 
+Mill cannot fulfill: 
+refund full payment 
+within 48h, rate mill 
+down 
+4 
+A farmer's feed delivery 
+arrives 
+they confirm receipt via 
+OTP 
+escrow releases to mill 
+within 24h; farmer rates 
+the mill on quality + 
+timeliness; commission 
+flows to 22POULTRY 
+Quality dispute: same 
+flow as US-008 escrow 
+dispute 
+5 
+A farmer wants to start a 
+new buying group 
+they tap "Start Group" 
+with feed type + volume 
+target 
+group is created and 
+visible to other farmers in 
+district; 22POULTRY 
+recruits via push 
+notification to matching 
+profiles 
+No mills available: 
+show waitlist + 
+alternate suppliers 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Feed mill partnerships (CP, Godrej, regional mills — see OQ-003) 
+•​ Group-buying engine with dynamic pricing 
+•​ Logistics coordination (asset-light: mill ships, farmer collects) 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ % farmers in active buying groups ≥ 30% 
+•​ Average savings per group transaction ≥ 6% vs. retail 
+•​ Mill repeat-supply rate ≥ 80% 
+ 
+Risk & Mitigation 
+Primary Risk 
+
+•​ Logistics: poultry feed is heavy. Avoid 22POULTRY-owned transport. Either farmers collect from central point or 
+mills ship — never us. 
+ 
+
+EPIC-06 
+Dashboard & Analytics 
+Give farmers cycle-level profitability visibility and NECC-anchored decision support. 
+ 
+US-016 
+Cycle Profitability Tracker 
+P1 — SHOULD HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Dashboard 
+Farmer 
+Phase 1 
+2,400 
+13 SP 
+ 
+User Story 
+As a farmer who tracks daily egg/feed in a spiral notebook, 
+I want to to log my cycle inputs (chicks, feed bags, vaccines, labor) and outputs (eggs/birds sold) 
+digitally and see my net profit per cycle in real-time 
+so that I know exactly which cycle made money, which lost money, and why. 
+ 
+📊 Research Context 
+AgriFarming 2024: typical 1000-bird broiler cycle nets ₹20–90/bird; farmers rarely know their actual cost basis. 
+Visibility into unit economics is the foundation for every other business improvement (training, financing, 
+pricing). 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+3,000 
+2 
+80% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer starts a new 
+cycle 
+they tap "Start New 
+Cycle" with start date, 
+flock type, bird count, 
+and chick cost 
+cycle is created; expected 
+end-date is computed (42 
+days broiler / 72 weeks 
+layer); cost basis is 
+initialized 
+Cycle overlap: show 
+warning, allow 
+multi-cycle tracking for 
+layer operations 
+2 
+A farmer adds an 
+expense 
+they tap "Add Expense" 
+with category 
+(feed/medicine/labor/uti
+lity/other), amount, and 
+optional photo of receipt 
+expense is logged with 
+timestamp; running 
+cost-per-bird is updated; 
+expense is 
+auto-categorized for 
+tax/loan reporting 
+Receipt image OCR 
+optional: extract 
+amount automatically 
+3 
+A farmer sells (or eggs 
+are collected) 
+they log the sale (or 
+daily egg count) 
+revenue is added; running 
+profit is shown; if sale 
+happened via the 
+marketplace, it 
+auto-populates with no 
+manual entry needed 
+Bulk sale at end of 
+cycle: single-entry 
+shortcut 
+4 
+A farmer views their 
+cycle dashboard 
+they open Cycle 
+Summary 
+show: total cost, total 
+revenue, current net P&L, 
+FCR (feed conversion 
+ratio), mortality %, cost 
+per bird, profit per bird; 
+benchmark vs. their last 3 
+cycles and district average 
+First cycle: show 
+industry benchmarks 
+only 
+5 
+A farmer completes a 
+cycle 
+they tap "Close Cycle" 
+final P&L report is 
+generated; downloadable 
+PDF; auto-flagged for KCC 
+renewal application; cycle 
+data feeds into reputation 
+score 
+Loss-making cycle: 
+offer "What went 
+wrong?" diagnostic 
+with training module 
+recommendations 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Local-first data store with cloud sync 
+•​ OCR for receipt photo (Google ML Kit or Tesseract) 
+•​ Reporting engine for P&L PDF export 
+ 
+Success Metrics 
+
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ % active farmers logging ≥ 1 expense/week ≥ 50% 
+•​ % cycles closed with complete data ≥ 60% 
+•​ P&L PDF downloads as % of cycle closes ≥ 40% 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ Data entry burden: keep it dead-simple. Voice input (US-003) is mandatory. Auto-pull from marketplace 
+transactions whenever possible. 
+ 
+
+US-017 
+NECC Price Analytics Dashboard 
+P0 — MUST HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Dashboard 
+Farmer + Buyer 
+Phase 1 
+8,500 
+8 SP 
+ 
+User Story 
+As a farmer or buyer making sell/hold/buy decisions, 
+I want to a dashboard showing NECC prices for my zone with 7/30/90-day trends, seasonality 
+overlay, and personalized signals 
+so that I time my sales (and purchases) for better prices, not random luck. 
+ 
+📊 Research Context 
+NECC prices are seasonally cyclical: Diwali/Christmas demand peaks, summer-heat dip, monsoon disease drag. 
+Hyderabad zone went from ₹176.57 (Apr 2009) to ₹655.97 (Dec 2025) per 100 eggs per CEIC — extreme 
+historical volatility creates opportunity for data-driven timing. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+5,000 
+2 
+85% 
+1 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer or buyer opens 
+"Price Insights" 
+dashboard loads 
+show today's NECC for 
+their zone, ₹/Δ vs. 
+yesterday, 7-day 
+mini-chart, current trend 
+label (rising/stable/falling) 
+Multi-zone user: 
+dropdown zone 
+selector 
+2 
+A user taps "Show 
+More" 
+expanded view loads 
+show 30-day chart with 
+marker for current price, 
+90-day chart with 
+seasonality bands (festival 
+Limited historical data: 
+show only available 
+range with disclaimer 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+demand, summer dip), 
+1-year overlay with prior 
+year 
+3 
+A user is in a high-trend 
+zone (e.g., prices rose 
+>5% in 7 days) 
+system detects trend 
+show actionable signal: 
+"Prices up ₹0.40/egg in 7 
+days — consider holding 
+3-5 days for further 
+upside" with confidence 
+indicator 
+Signal hedging: never 
+give absolute "buy/sell" 
+advice, always 
+probabilistic 
+4 
+A user wants to forecast 
+their cycle's sell-window 
+pricing 
+they enter expected 
+ready-date 
+forecast band is shown 
+using historical seasonality 
++ recent trend; confidence 
+interval explicit 
+Forecast >60 days out: 
+explicit "low 
+confidence" label 
+5 
+A user wants to set 
+custom alerts 
+they configure (e.g., 
+"alert me if NECC rises 
+>5% in 7 days") 
+alerts trigger via 
+WhatsApp + push within 
+30 min of threshold breach 
+Alert spam: max 5 
+alerts/day per user, 
+batched 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Time-series database (US-006) 
+•​ Forecasting engine (simple ARIMA / seasonal decomposition for Phase 1) 
+•​ Charting library (Recharts already in stack) 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ % of marketplace listings created within 24h of a price-up signal ≥ 30% 
+•​ Dashboard engagement time P50 ≥ 90 seconds 
+•​ Alert opt-in rate ≥ 50% 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ Forecasts can be wrong; "we told you to wait, you lost money" is a reputational risk. Use confidence intervals; 
+never make absolute predictions. 
+ 
+
+EPIC-07 
+Community & Networking 
+Build peer-trust networks and crowdsourced disease early warning. 
+ 
+US-018 
+Farmer Community Feed 
+P1 — SHOULD HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Community 
+Farmer 
+Phase 2 
+2,100 
+13 SP 
+ 
+User Story 
+As a farmer who wants peer advice and to share my experiences, 
+I want to a community feed where I see posts from farmers in my district + state, can ask 
+questions, and share my own milestones 
+so that I learn from peers who actually run similar operations, not just from official content. 
+ 
+📊 Research Context 
+Krishify (10M farmers) and Wefarm (Africa) validate peer community as a standalone product. For 22POULTRY, 
+community is the moat that prevents churn — once a farmer has 50 connections, switching cost is high. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+3,500 
+2 
+75% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer opens the 
+Community tab 
+feed loads 
+show posts from farmers 
+in their district + state, 
+New user: pre-populate 
+with curated welcome 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+sorted by recency × 
+engagement; default to 
+vernacular content in their 
+language; option to 
+expand to national feed 
+content + suggested 
+farmers to follow 
+2 
+A farmer wants to post 
+they tap "+ Post" 
+options: text, photo, voice 
+note, video clip (≤60s); 
+auto-translate to nearby 
+languages on demand; can 
+tag location, flock type, 
+topic 
+Content moderation: 
+auto-flag profanity, 
+abuse; manual review 
+queue for edge cases 
+3 
+A farmer wants to ask a 
+question 
+they post with 
+"Question" tag 
+post is boosted to relevant 
+experts (Dr. Anita Sharma 
+persona, P-04) and 50 
+nearby farmers; first 3 
+quality answers get small 
+reputation boost 
+No answers in 48h: 
+escalate to 
+platform-paid experts 
+4 
+A farmer reads a useful 
+post 
+they tap "Helpful" 
+post-author's contribution 
+score rises; helpful-ratio 
+determines who appears 
+in suggested-follows; 
+abusive use triggers 
+anti-gaming heuristics 
+Brigading: detect 
+coordinated voting 
+5 
+A community moderator 
+(P-04 vet) flags 
+misinformation 
+they tag a post 
+post gets a 
+community-fact-check tag; 
+original poster notified; 
+repeated misinformation 
+reduces post visibility 
+False flag: appeal 
+process 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Community feed ranking algorithm 
+•​ Content moderation pipeline (auto + manual) 
+•​ Voice note + short video upload 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+
+•​ % MAU posting or commenting ≥ 20% 
+•​ Median posts per active community user ≥ 4/month 
+•​ Helpful-rate per post ≥ 30% 
+•​ Reported abuse rate ≤ 1% 
+ 
+Risk & Mitigation 
+Primary Risk 
+•​ Community can turn toxic. Hire 1 community manager per 10k MAU; build moderation tooling before launch. 
+ 
+
+US-019 
+Peer Disease Early Warning System 
+P1 — SHOULD HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Community 
+Farmer + Vet 
+Phase 2 
+4,500 
+21 SP 
+ 
+User Story 
+As a farmer who suspects something is wrong with my flock but is not sure if it's a disease, 
+I want to a fast way to describe symptoms via voice and get peer + expert input within hours, plus 
+a community-wide alert if I'm one of multiple cases nearby 
+so that I catch outbreaks before they wipe out my flock — and help my neighbors do the same. 
+ 
+📊 Research Context 
+Wefarm SMS-based peer advice validated the demand. For HPAI specifically, the difference between Day-1 
+detection and Day-5 detection is the difference between losing 1 shed and losing the farm. Crowdsourced 
+early warning + expert triage is faster than DAHD reporting. 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+5,000 
+3 
+60% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer notices unusual 
+symptoms 
+they tap "Report 
+Symptoms" and describe 
+via voice/text/photo 
+symptoms are 
+auto-tagged; possible 
+conditions are surfaced 
+(Newcastle, AI, coccidiosis, 
+etc.); urgency level 
+(mild/medium/severe) is 
+computed 
+Severe symptoms 
+(sudden mass 
+mortality): bypass 
+triage, page on-call vet 
+immediately 
+2 
+Symptoms are submitted 
+system runs cluster 
+detection 
+if 3+ similar symptom 
+reports cluster within 10 
+False cluster (e.g., heat 
+stress mistaken as 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+km in 72h, all farmers 
+within 25 km radius 
+receive a community alert 
+with specific watch-points 
+disease): vet review 
+before broadcast 
+3 
+A farmer wants expert 
+opinion 
+they tap "Ask Vet" within 
+a symptom report 
+a certified vet (US-020) is 
+paged; response within 4h 
+for premium, 24h for free 
+tier; conversation is 
+private to farmer + vet, 
+anonymized data feeds 
+cluster detection 
+No vet available: queue 
++ estimated wait time 
+4 
+A vet confirms a disease 
+pattern 
+they tag the report 
+biosecurity alert (US-012) 
+is triggered if not already 
+active; farmer's symptom 
+report is linked to the 
+broader outbreak record 
+Vet error in 
+classification: 
+peer-review system 
+among vets 
+5 
+A farmer has reported 
+symptoms but condition 
+stabilizes 
+they update status to 
+"Recovered" 
+cluster data is updated; 
+farmer can write a brief 
+recap of what worked; 
+recap is anonymously 
+shared with the 
+symptom-report 
+community as learning 
+content 
+Did not recover but 
+stopped reporting: 
+7-day follow-up prompt 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Symptom ontology + classification (built with ICAR vet input) 
+•​ Cluster detection engine (geo + temporal) 
+•​ On-call vet roster (US-020 dependency) 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ Symptom reports → vet engagement within 24h ≥ 90% 
+•​ Cluster detection precision (true outbreak / total alerts) ≥ 80% 
+•​ Early-alert farmers vs. control: mortality reduction ≥ 30% 
+ 
+
+Risk & Mitigation 
+Primary Risk 
+•​ False positives cause alert fatigue. Use precision-over-recall in cluster detection. Manually confirm any 
+community-wide alert in Phase 1-2. 
+ 
+
+US-020 
+Expert Vet Consultation Booking 
+P1 — SHOULD HAVE 
+ 
+EPIC 
+PERSONA 
+PHASE 
+RICE SCORE 
+EST. EFFORT 
+Community 
+Vet + Farmer 
+Phase 2 
+1,400 
+13 SP 
+ 
+User Story 
+As a farmer with a specific health/management question, 
+I want to to book a 15-minute video or voice consult with a certified poultry vet for ₹100–₹300 
+so that I get expert advice within hours instead of waiting for the next government vet visit. 
+ 
+📊 Research Context 
+Persona Dr. Anita Sharma quote: "I can visit 80 farms a month if I drive 10 hours a day. But there are 8,000 
+farms in this district." Digital tele-consult unlocks 100× scaling for experts and 10× faster access for farmers. 
+Drives both retention (free tier) and ARPU (paid). 
+ 
+RICE Score Breakdown 
+REACH 
+(farmers/quarter) 
+IMPACT (1/2/3) 
+CONFIDENCE (%) 
+EFFORT (sprints) 
+2,000 
+2 
+70% 
+2 
+ 
+Acceptance Criteria 
+All 5 criteria must pass before this story can be marked Done. Each follows Gherkin 
+Given/When/Then with explicit edge case handling. 
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+1 
+A farmer needs a vet 
+consult 
+they tap "Book a Vet" 
+show available certified 
+vets filtered by language + 
+specialty + 
+next-available-slot; show 
+rating + consults 
+completed + price 
+No vet in language 
+available within 24h: 
+show next-best 
+alternatives with 
+translator-assist option 
+2 
+A farmer selects a vet 
+and slot 
+they pay via UPI 
+(₹100–₹300 typical) 
+consult is booked; 
+calendar invite sent via 
+WhatsApp; reminder 30 
+min before; vet receives 
+Vet no-show: full 
+refund + auto-rebook 
+with alternate vet 
+
+# 
+GIVEN (Context) 
+WHEN (Action) 
+THEN (Outcome) 
+Edge Cases 
+consult brief with farmer 
+profile + reported 
+symptoms (US-019) 
+3 
+Consult time arrives 
+both parties join via 
+embedded video/voice 
+call 
+call runs 15 minutes 
+(extendable in 5-min 
+blocks at proportional 
+cost); recording is optional 
+with both parties' consent; 
+prescription/advice notes 
+are captured 
+Network issues: 
+degrade video → voice 
+→ text chat seamlessly 
+4 
+Consult ends 
+vet finalizes notes 
+farmer receives summary 
+in their language + any 
+prescriptions or follow-up 
+actions; consult fee is 
+released to vet after 24h 
+dispute window (escrow 
+logic similar to US-008) 
+Dispute: same 
+resolution flow as 
+marketplace dispute 
+5 
+A vet wants to set up 
+consultations 
+they apply via "Become 
+a 22POULTRY Expert" 
+they upload credentials 
+(B.V.Sc. degree, govt 
+registration, 5+ years 
+experience); manual 
+verification by 22POULTRY 
+team; once approved, they 
+set rates and availability 
+Application rejected: 
+clear reasons + reapply 
+path 
+ 
+Dependencies 
+External & Internal Dependencies 
+•​ Video/voice calling infrastructure (Jitsi self-hosted, Google Meet API, or Zoom — see OQ-006) 
+•​ Vet credentialing workflow 
+•​ Calendar booking + reminder system 
+ 
+Success Metrics 
+Quantified KPIs (track in Mixpanel + ops dashboards) 
+•​ % MAU booking ≥ 1 consult/quarter ≥ 5% 
+•​ Vet utilization (booked hours / available hours) ≥ 40% 
+•​ Consult NPS ≥ +50 
+•​ Vet retention (active after 90 days) ≥ 75% 
+ 
+
+Risk & Mitigation 
+Primary Risk 
+•​ Vet supply constraint. Recruit 20 vets per pilot state before launch. Pay guaranteed minimums for first 90 days 
+to lock in supply. 
+ 
+
+5. Definition of Done 
+A story is not "done" until every item in the relevant category is verifiable. The DoD applies to every 
+story in this document and is enforced at sprint review. 
+ 
+Code Quality 
+Code Quality Checklist 
+•​ All code reviewed by ≥ 1 senior engineer; merge blocked otherwise 
+•​ Unit test coverage ≥ 80% for new code; existing coverage not degraded 
+•​ No new ESLint/Prettier errors; CI pipeline green 
+•​ Logs structured (JSON); user-facing errors carry trace IDs 
+ 
+Testing 
+Testing Checklist 
+•​ Each AC mapped to ≥ 1 automated integration test 
+•​ Cross-browser tested: latest Chrome, Safari iOS, Android WebView 
+•​ Tested on low-end device (4 GB RAM Android 11) over throttled 3G 
+•​ Manual smoke test on staging by QA before promotion 
+ 
+Localization & Accessibility 
+Localization & Accessibility Checklist 
+•​ All user-facing strings extracted to i18n catalog; no hardcoded text 
+•​ Translated to English, Hindi, Telugu, Tamil (Phase 1 minimum) 
+•​ Voice input tested in all Phase 1 languages where applicable 
+•​ WCAG 2.1 AA contrast ratios; minimum tap target 44×44 dp 
+ 
+Data & Privacy 
+Data & Privacy Checklist 
+•​ DPDP Act 2023 consent flow for any personal data collected 
+•​ PII encrypted at rest (AES-256) and in transit (TLS 1.3+) 
+•​ No raw Aadhaar numbers stored — only masked + UIDAI reference token 
+•​ Data retention policy documented; deletion-on-request flow tested 
+ 
+Performance 
+
+Performance Checklist 
+•​ P95 page load ≤ 3 seconds on simulated 3G 
+•​ API endpoint P95 latency ≤ 800ms (excluding third-party calls) 
+•​ App bundle size delta ≤ 100KB per story (justify if exceeded) 
+•​ No N+1 queries; database queries reviewed for index usage 
+ 
+Documentation 
+Documentation Checklist 
+•​ API endpoints documented in OpenAPI/Swagger 
+•​ User-facing help articles published in EN + HI + TE + TA 
+•​ Internal runbook updated for ops-impacting features 
+•​ Release notes drafted for changelog 
+ 
+Stakeholder Sign-Off 
+Stakeholder Sign-Off Checklist 
+•​ Product Manager has accepted on staging against ACs 
+•​ Founder has reviewed for strategic alignment (for P0 stories only) 
+•​ Design has confirmed UI matches Figma spec 
+•​ Customer success briefed; support docs updated 
+ 
+ 
+
+6. Non-Functional Requirements 
+NFRs apply across all 20 stories and define platform-wide qualities that any story must respect. They 
+are the bar — not aspirations. 
+ 
+NFR-001 
+Performance 
+P0 
+ 
+Target 
+App load ≤ 3 seconds on 3G; API P95 ≤ 800ms; offline mode loads instantly 
+Rationale 
+Ookla 2025: 88.9% village 4G coverage but in-shed signal often drops to 3G. Slow apps 
+lose semi-literate users within 3 attempts. 
+ 
+Acceptance Criteria 
+•​ Initial app cold start ≤ 3.5s on Redmi Note 12 simulated 3G 
+•​ Time-to-interactive ≤ 4s on the same baseline 
+•​ API endpoints P95 latency ≤ 800ms (server-side, excludes 3rd-party hops) 
+•​ Image lazy-loading and progressive JPEG mandatory for marketplace listings 
+ 
+NFR-002 
+Offline & Sync Resilience 
+P0 
+ 
+Target 
+App fully functional offline for 72h post-last-sync; queued actions sync automatically on 
+reconnect 
+Rationale 
+Rural connectivity is intermittent; offline-first is the only model that preserves trust. 
+Validated by DeHaat and Stellapps offline architectures. 
+ 
+Acceptance Criteria 
+•​ All read paths render from local cache without network 
+•​ Write actions (listings, ratings, expense logs) queue locally and sync within 30s of reconnect 
+•​ Sync conflicts use last-write-wins with audit log; no silent data loss 
+•​ Cache eviction is LRU with user override for "always keep" content 
+ 
+NFR-003 
+Localization 
+P0 
+ 
+
+Target 
+9 languages with native script + voice input + cultural appropriateness 
+Rationale 
+Only 40% of Indian internet users access content in English (GrabOn 2025); vernacular 
+content grew 150% (2020–24). English-only is product failure. 
+ 
+Acceptance Criteria 
+•​ Languages: English, Hindi, Telugu, Tamil, Kannada, Marathi, Bengali, Punjabi, Malayalam 
+•​ Professional translation review per language by native QA reviewer 
+•​ Voice-to-text in all 9 languages via Bhashini or Google Cloud 
+•​ Localized number formats, dates, currency presentation 
+ 
+NFR-004 
+Security & Privacy 
+P0 
+ 
+Target 
+DPDP Act 2023 compliant; SOC 2 Type II within Phase 2 
+Rationale 
+Trust is existential. One breach destroys regional reputation. India's DPDP Act creates 
+concrete fines (₹250 crore max) for violations. 
+ 
+Acceptance Criteria 
+•​ TLS 1.3+ in transit; AES-256 at rest for PII 
+•​ Aadhaar numbers never stored in plaintext; only masked + UIDAI token 
+•​ OWASP Top 10 testing per quarter; pen-test annually 
+•​ DPDP consent flows audited; data deletion on user request within 30 days 
+•​ Role-based access control on all internal admin tooling 
+ 
+NFR-005 
+Payment Reliability 
+P0 
+ 
+Target 
+UPI uptime ≥ 99.5%; reconciliation accuracy = 100% 
+Rationale 
+Payment failures directly cause transaction abandonment. One bad payment ruins 
+regional reputation in days. 
+ 
+Acceptance Criteria 
+•​ 99.5% UPI transaction success on first attempt (excluding bank-side failures) 
+
+•​ Escrow reconciliation: zero unreconciled transactions older than 24h 
+•​ Idempotency keys on every payment write; retries are safe 
+•​ Real-time dashboard for ops team to detect payment incidents 
+ 
+NFR-006 
+Scalability 
+P1 
+ 
+Target 
+Support 50K concurrent users by end of Phase 2 without architectural rewrites 
+Rationale 
+Phase 1 launches at ~1k farmers; Phase 2 targets 50k. Over-engineering at Phase 1 wastes 
+capital; under-engineering forces rewrites. 
+ 
+Acceptance Criteria 
+•​ Stateless application servers behind auto-scaling group 
+•​ Database read replicas for analytical queries; write traffic on primary 
+•​ CDN for all static assets including video content 
+•​ Background job queue can process ≥ 1M jobs/day with horizontal scaling 
+ 
+NFR-007 
+Accessibility 
+P1 
+ 
+Target 
+WCAG 2.1 AA; voice input on every form; high-contrast mode 
+Rationale 
+Semi-literate users with vision/dexterity issues are a meaningful share of the SAM. 
+Voice-first interfaces lift completion by 38% in low-literacy populations (Microsoft 
+Research India). 
+ 
+Acceptance Criteria 
+•​ All text contrast ≥ 4.5:1 (body) and 3:1 (large text/icons) 
+•​ Minimum tap target 44×44 dp 
+•​ TalkBack/VoiceOver support on every flow 
+•​ Voice input on every text field, not just search 
+ 
+NFR-008 
+Notification Delivery 
+P0 
+ 
+
+Target 
+≥ 98% notification delivery; price alerts within 30 min of threshold; biosecurity alerts 
+within 2h of DAHD trigger 
+Rationale 
+Notifications are the primary driver of farmer return-visits. Missed disease alerts have 
+life-or-death consequences for flocks. 
+ 
+Acceptance Criteria 
+•​ WhatsApp Business API delivery rate ≥ 98% within 5 min of send 
+•​ SMS fallback if WhatsApp delivery confirmation not received in 15 min 
+•​ Push notifications retry up to 3× over 24h if device offline 
+•​ Notification preferences per user honored; one-click unsubscribe per category 
+ 
+
+7. Open Questions & Decisions Pending 
+These are unresolved decisions that block or risk specific stories. Each has an owner, target 
+resolution date, and impact analysis. Tracked in the founder's weekly review. 
+ 
+OQ-001 
+NECC data licensing — partnership, paid scrape, or crowdsource? 
+ 
+Blocks Stories 
+US-004, US-006, US-017 
+Owner 
+Founder 
+Target Resolution 
+End of Sprint 2 
+Impact 
+CRITICAL — entire marketplace value proposition depends on this. Plan A: NECC 
+partnership outreach (in progress). Plan B: licensed daily scrape with attribution. 
+Plan C: crowd-sourced farmer-reported prices with statistical aggregation. 
+Current Status 
+Open 
+ 
+OQ-002 
+DAHD state-API mapping — which states have production-ready APIs vs. PDF-only? 
+ 
+Blocks Stories 
+US-002 
+Owner 
+Tech Lead 
+Target Resolution 
+End of Sprint 1 
+Impact 
+HIGH — AP and Telangana confirmed via state nodal officer; TN and Karnataka under 
+exploration. Determines Phase 1 launch state sequencing. 
+Current Status 
+Open 
+ 
+OQ-003 
+Banking, insurance, and feed mill partners — first 2 of each for Phase 1? 
+ 
+Blocks Stories 
+US-013, US-014, US-015 
+
+Owner 
+Founder 
+Target Resolution 
+End of Sprint 4 
+Impact 
+HIGH — financial services module cannot launch without ≥ 1 bank partner with API 
+access. Founder relationships at Andhra Bank and Krishna District Coop Bank should 
+be leveraged in Phase 1. 
+Current Status 
+In progress — bank LOIs drafted 
+ 
+OQ-004 
+Escrow PSP — Razorpay, Cashfree, or in-house PA license? 
+ 
+Blocks Stories 
+US-007, US-008 
+Owner 
+CTO + Founder 
+Target Resolution 
+End of Sprint 2 
+Impact 
+HIGH — sub-merchant model with established PSP is 12 weeks; own PA license is 
+9–12 months. Recommend Razorpay sub-merchant for Phase 1, revisit own license 
+at Phase 2 scale. 
+Current Status 
+Open 
+ 
+OQ-005 
+Vernacular content production — internal studio, ICAR partnership, or vendor? 
+ 
+Blocks Stories 
+US-010 
+Owner 
+Content Lead 
+Target Resolution 
+End of Sprint 3 
+Impact 
+MEDIUM — content quality is reputational. ICAR co-branding is highest credibility 
+but slowest. Vendor route is fastest but expensive. Recommend hybrid: ICAR content 
+licensing + production vendor for vernacular voice/edit. 
+Current Status 
+Open 
+ 
+
+OQ-006 
+Video/voice calling for vet consults — Jitsi self-host, Google Meet API, or Zoom SDK? 
+ 
+Blocks Stories 
+US-020 
+Owner 
+Tech Lead 
+Target Resolution 
+Phase 2 planning 
+Impact 
+LOW — affects Phase 2 only. Jitsi is cheapest but operationally heavy; Google Meet 
+API is simplest. Defer until Phase 1 PMF confirmed. 
+Current Status 
+Deferred to Phase 2 
+ 
+OQ-007 
+UIDAI AUA (Authentication User Agency) license — apply directly or via ASA partner? 
+ 
+Blocks Stories 
+US-001 (Aadhaar e-KYC) 
+Owner 
+Legal + Founder 
+Target Resolution 
+WEEK 1 — URGENT 
+Impact 
+CRITICAL & TIME-SENSITIVE — direct AUA approval is 4–8 weeks; ASA partner route 
+is 1–2 weeks at higher per-transaction cost. Recommend ASA route for Phase 1 
+launch speed, direct AUA application in parallel for Phase 2 economics. 
+Current Status 
+Application drafted — pending Legal review 
+ 
+
+8. Phase Roadmap Summary 
+How the 20 stories sequence across Phases 1 and 2. Phase 1 establishes PMF in AP + Telangana; 
+Phase 2 scales to 5–10 states with deeper financial services and community features. 
+ 
+8.1 Phase 1 — PMF in 1–2 States (Months 1–6) 
+Geography 
+Andhra Pradesh + Telangana (top 2 egg-producing states; 30%+ of national 
+output) 
+Farmer Target 
+1,000 – 5,000 active farmers 
+Monthly GMV 
+₹70 Lakh – ₹2.5 Crore by Month 6 
+Revenue Target 
+₹5 – 15 Lakh by Month 6 (mostly marketplace commission) 
+Team Size 
+6 – 10 (founders + 2 field agents + 3 engineers + 1 designer) 
+North-Star Metric 
+Cycle 2 repeat-transaction rate ≥ 70% 
+Phase 1 Stories 
+14 stories (10 P0 + 4 P1) covering Onboarding, Marketplace, Trust/Payment, 
+Training, Critical Financial, Dashboard 
+ 
+8.2 Phase 2 — Multi-State Scale (Months 6–18) 
+Geography 
+Add Tamil Nadu, Karnataka, Maharashtra, Haryana, Punjab, West Bengal (top 8 
+poultry states = 75%+ of national output) 
+Farmer Target 
+50,000 active farmers 
+Monthly GMV 
+₹50 Crore – ₹100 Crore 
+Revenue Target 
+₹5 – 10 Crore annualized (multi-revenue: marketplace + training + financial 
+commissions) 
+Team Size 
+40 – 60 (regional managers + content + ops) 
+North-Star Metric 
+Monthly active farmers × monthly GMV per farmer 
+Phase 2 Stories 
+6 stories — Insurance, Bulk Feed Buying, Community Feed, Peer Disease 
+Warning, Vet Consults, plus deeper analytics 
+ 
+
+8.3 Story → Phase Mapping 
+PHASE 1 — PMF Build (15 stories) 
+PHASE 2 — Scale Build (5 stories) 
+US-001 Farmer Registration with Mobile + Aadhaar e-KYC 
+US-002 Farm Profile Setup with DAHD Registration Sync 
+US-003 Language Preference & Vernacular Voice UI 
+US-004 Farmer Creates Bird/Egg Listing with NECC Anchor 
+US-005 Buyer Browses & Filters Verified Listings 
+US-006 Real-Time NECC Price Feed Integration 
+US-007 UPI Escrow Payment Initiation 
+US-008 Delivery Verification & Escrow Release 
+US-009 Post-Transaction Rating & Trust Score 
+US-010 Vernacular Video Training Module 
+US-011 Offline Content Download & Sync 
+US-012 Disease & Biosecurity Alert Push 
+US-013 KCC Loan Application Facilitation 
+US-016 Cycle Profitability Tracker 
+US-017 NECC Price Analytics Dashboard 
+US-014 Poultry Insurance Enrollment 
+US-015 Bulk Feed Buying Group Formation 
+US-018 Farmer Community Feed 
+US-019 Peer Disease Early Warning System 
+US-020 Expert Vet Consultation Booking 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+
+9. Appendix — Glossary & References 
+9.1 Glossary 
+AHIDF 
+Animal Husbandry Infrastructure Development Fund (₹29,110 Cr, GoI) 
+AC 
+Acceptance Criteria — testable conditions a story must satisfy 
+Bhashini 
+Govt of India national language translation platform 
+DAHD 
+Department of Animal Husbandry & Dairying, Govt of India 
+DoD 
+Definition of Done — checklist for story completion 
+DPDP 
+Digital Personal Data Protection Act 2023, India 
+e-KYC 
+Electronic Know-Your-Customer (Aadhaar-based) 
+FCR 
+Feed Conversion Ratio (kg feed per kg live weight) 
+Gherkin 
+Given/When/Then AC syntax used across this document 
+HPAI 
+Highly Pathogenic Avian Influenza (e.g., H5N1) 
+IRDAI 
+Insurance Regulatory & Development Authority of India 
+KCC 
+Kisan Credit Card — collateral-free up to ₹1.6 lakh @ ~4% effective interest 
+LHDCP 
+Livestock Health and Disease Control Programme (50:50 Centre-State) 
+NECC 
+National Egg Coordination Committee — sets daily zonal egg prices 
+NLM 
+National Livestock Mission (50% subsidy up to ₹25 lakh for rural poultry) 
+NPCI 
+National Payments Corporation of India 
+PSP 
+Payment Service Provider (Razorpay, Cashfree, Easebuzz, etc.) 
+RICE 
+Reach × Impact × Confidence / Effort prioritization framework 
+SAM 
+Serviceable Addressable Market (≈ 1M Indian small poultry farmers) 
+SP 
+Story Points (Fibonacci: 1, 2, 3, 5, 8, 13, 21) 
+
+UPI 
+Unified Payments Interface — India's real-time payment rail 
+UIDAI 
+Unique Identification Authority of India (Aadhaar) 
+ 
+9.2 Primary Research References 
+All stories trace back to the 22POULTRY Investor Thesis Research Report v1.0. Key sources: 
+•​ DAHD / BAHS 2024 — Basic Animal Husbandry Statistics (149.11 Bn eggs, 4.5–5 MMT broiler 
+meat) 
+•​ FAO / ICRIER-PARI 2021 — "Poultry Revolution in India" (Mehta & Nambiar) — 70% smallholder 
+share 
+•​ Down to Earth, March 2025 — Punjab Agricultural University primary survey (₹17.17/bird farmer 
+pay vs. ₹191.17 integrator sale) 
+•​ Inc42 Agri-Fintech 2022 — 70% informal credit, 24–60% interest rates 
+•​ CareEdge Ratings, October 2024 — Indian Poultry Industry Outlook (65–70% feed cost share) 
+•​ Mordor Intelligence 2025 — India Poultry Meat & Feed Market Reports 
+•​ TRAI Q2 2025 / Ookla 2025 / IAMAI–Kantar 2024 — Rural digital adoption baselines 
+•​ PIB Press Release ID 2119198 (April 4, 2025) — DAHD 3-pronged HPAI strategy + mandatory farm 
+registration 
+•​ NABARD KCC & AHIDF official portal communications 
+•​ Engormix industry forums — direct farmer testimonies (Kolwankar, anonymous Chittoor farmer, 
+Prasad) 
+ 
+9.3 Document Sign-Off 
+Approved By (Product) 
+_____________________________ Date: ___________ 
+Approved By (Engineering) 
+_____________________________ Date: ___________ 
+Approved By (Design) 
+_____________________________ Date: ___________ 
+Approved By 
+(Founder/CEO) 
+_____________________________ Date: ___________ 
+ 
+ 
+ 
+— End of Document — 
+ 
+22POULTRY • User Stories & Acceptance Criteria v1.0 • Confidential 
+ 
