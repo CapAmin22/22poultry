@@ -67,12 +67,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         )}
       </AnimatePresence>
 
-      <div className={`flex-1 flex flex-col transition-all duration-300 ${sidebarOpen ? 'md:ml-0' : 'md:ml-0'}`}>
-        <div className="sticky top-0 z-10">
+      <div className="flex-1 flex flex-col transition-all duration-300">
+        <div className="sticky top-0 z-30">
           <Navbar />
         </div>
 
-        <main className="flex-1 mt-16 transition-all duration-300"> 
+        <main className="flex-1 transition-all duration-300"> 
           <div className="container mx-auto px-4 py-6">
             <motion.div
               initial={{ opacity: 0, y: 10 }}

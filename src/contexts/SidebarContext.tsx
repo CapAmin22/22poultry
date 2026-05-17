@@ -18,9 +18,8 @@ export const SidebarProvider = ({ children }: { children: ReactNode }) => {
 
   // Initialize sidebar state based on device
   useEffect(() => {
-    // On desktop, sidebar should be open by default but only on wider screens
-    const shouldOpenByDefault = !isMobile && window.innerWidth >= 1280;
-    setSidebarOpen(shouldOpenByDefault);
+    // Sidebar should start closed by default on all devices (mobile & desktop) as requested
+    setSidebarOpen(false);
   }, [isMobile]);
   
   // Auto-close sidebar on mobile when changing routes

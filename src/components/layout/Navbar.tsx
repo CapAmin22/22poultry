@@ -53,8 +53,8 @@ const Navbar: React.FC = () => {
 
   // Only show the sidebar toggle button on authenticated pages (not landing page, auth, etc.)
   const showSidebarToggle = user && location.pathname !== '/' && location.pathname !== '/auth';
-  return <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-200 ${isScrolled ? 'bg-white shadow-md' : 'bg-white/90 backdrop-blur-sm'}`}>
-      <div className="container mx-auto flex justify-between items-center px-4 h-16">
+  return <header className={`w-full z-10 transition-all duration-200 border-b border-gray-100 ${isScrolled ? 'bg-white shadow-sm' : 'bg-white'}`}>
+      <div className="w-full flex justify-between items-center px-6 h-16">
         <div className="flex items-center">
           {/* Hamburger Menu for Sidebar (Only shown when authenticated) */}
           {showSidebarToggle && <Button variant="ghost" size="icon" onClick={toggleSidebar} className="mr-2 text-gray-600 hover:text-[#f5565c] hover:bg-transparent">
@@ -63,9 +63,14 @@ const Navbar: React.FC = () => {
             </Button>}
           
           {/* Logo */}
-          <Link to={user ? '/dashboard' : '/'} className="flex items-center">
-            <img src="/lovable-uploads/c2d12773-fb51-4928-bf1a-c30b2d1b60e8.png" alt="22POULTRY" className="h-10 w-auto mr-2" />
-            <span className="font-bold text-xl text-[#f5565c]">22POULTRY</span>
+          <Link 
+            to={user ? '/dashboard' : '/'} 
+            className={`flex items-center transition-all duration-300 overflow-hidden whitespace-nowrap ${
+              sidebarOpen ? 'md:w-0 md:opacity-0 md:pointer-events-none' : 'w-auto opacity-100 mr-2'
+            }`}
+          >
+            <img src="/lovable-uploads/c2d12773-fb51-4928-bf1a-c30b2d1b60e8.png" alt="22POULTRY" className="h-10 w-auto mr-2 flex-shrink-0" />
+            <span className="font-bold text-xl text-[#f5565c] flex-shrink-0">22POULTRY</span>
           </Link>
         </div>
 
